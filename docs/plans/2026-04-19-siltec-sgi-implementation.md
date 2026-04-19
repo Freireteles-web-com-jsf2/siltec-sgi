@@ -10,109 +10,50 @@
 
 ---
 
-### Task 1: Setup do Projeto e Tailwind
+### Task 1: Setup do Projeto e Tailwind (CONCLUÍDA)
+### Task 2: Inicialização shadcn/ui e Glassmorphism (CONCLUÍDA)
+### Task 3: Configuração Supabase Client e AuthContext (CONCLUÍDA)
+### Task 4: Layout Base (Sidebar & BottomNav) (CONCLUÍDA)
+### Task 5: Dashboard - StatCards e Bento Grid (CONCLUÍDA)
+
+---
+
+### Task 6: Gestão de Membros - Listagem e Indicadores
 
 **Files:**
-- Create: `package.json`, `tsconfig.json`, `vite.config.ts` (via Vite CLI)
-- Modify: `tailwind.config.js`, `src/styles/globals.css`
+- Create: `src/pages/MembersPage.tsx`, `src/hooks/useMembers.ts`
+- Modify: `src/App.tsx` (adicionar rota)
 
-**Step 1: Inicializar Vite**
-Run: `npm create vite@latest . -- --template react-ts`
-Expected: Arquivos base criados.
+**Step 1: Criar Hook useMembers**
+Implementar busca de membros no Supabase usando React Query. Criar tipos para Membro.
 
-**Step 2: Instalar Tailwind e Dependências Base**
-Run: `npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p`
-Run: `npm install lucide-react react-router-dom @tanstack/react-query @supabase/supabase-js @supabase/auth-helpers-react clsx tailwind-merge`
+**Step 2: Implementar MembersPage**
+Adicionar indicadores no topo (total, ativos, inativos) usando StatCard.
+Implementar tabela com shadcn/ui (`table`) mostrando Avatar, Nome, Status e Departamento.
+Incluir barra de busca e abas para filtragem por status.
 
-**Step 3: Configurar Tailwind com Cores e Fontes**
-Modify `tailwind.config.js` com as cores Zinc-950, Indigo-500 e as fontes Manrope/Inter. Adicionar suporte a animações de skeleton.
-
-**Step 4: Commit**
+**Step 3: Commit**
 ```bash
-git add .
-git commit -m "chore: initial vite + tailwind + deps setup"
+git add src/pages/MembersPage.tsx src/hooks/useMembers.ts
+git commit -m "feat: add members page with listing and indicators"
 ```
 
 ---
 
-### Task 2: Inicialização shadcn/ui e Glassmorphism
+### Task 7: Eventos - Calendário e Cards
 
 **Files:**
-- Create: `components.json`
-- Modify: `src/styles/globals.css`
+- Create: `src/pages/EventsPage.tsx`, `src/components/ui/EventCard.tsx`
+- Modify: `src/App.tsx` (adicionar rota)
 
-**Step 1: Init shadcn/ui**
-Run: `npx shadcn-ui@latest init` (Escolher Zinc, New York style, CSS Variables: Yes).
+**Step 1: Criar Componente EventCard**
+Card com imagem de destaque, título, data, local e badge de categoria. Usar efeito glassmorphism.
 
-**Step 2: Adicionar utilitários de Glassmorphism**
-Modify `src/styles/globals.css` para incluir a classe `.bg-santuario-glass`:
-```css
-@layer utilities {
-  .bg-santuario-glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
-  }
-}
-```
+**Step 2: Implementar EventsPage**
+Grid de eventos futuros e integração com o componente de Calendário do shadcn.
 
 **Step 3: Commit**
 ```bash
-git add .
-git commit -m "feat: init shadcn/ui and glassmorphism utilities"
-```
-
----
-
-### Task 3: Configuração Supabase Client e AuthContext
-
-**Files:**
-- Create: `.env`, `src/api/supabaseClient.ts`, `src/contexts/AuthContext.tsx`
-
-**Step 1: Criar Cliente Supabase**
-Implementar o singleton do cliente usando as variáveis de ambiente.
-
-**Step 2: Implementar AuthContext**
-Usar o helper `SessionContextProvider` do Supabase para envolver a aplicação.
-
-**Step 3: Commit**
-```bash
-git add src/api src/contexts
-git commit -m "feat: setup supabase client and auth context"
-```
-
----
-
-### Task 4: Layout Base (Sidebar & BottomNav)
-
-**Files:**
-- Create: `src/components/layout/Sidebar.tsx`, `src/components/layout/BottomNav.tsx`, `src/components/layout/MainLayout.tsx`
-
-**Step 1: Criar Sidebar (Desktop)**
-Implementar componente com `Lucide React` e suporte a colapsar. Usar `bg-santuario-glass`.
-
-**Step 2: Criar BottomNav (Mobile)**
-Implementar barra inferior fixa com os 5 ícones principais.
-
-**Step 3: Commit**
-```bash
-git add src/components/layout
-git commit -m "feat: add responsive layout (sidebar + bottomnav)"
-```
-
----
-
-### Task 5: Dashboard - StatCards e Bento Grid
-
-**Files:**
-- Create: `src/components/ui/StatCard.tsx`, `src/pages/DashboardPage.tsx`
-
-**Step 1: Implementar StatCard**
-Criar card com ícone, valor e variação percentual.
-
-**Step 2: Montar Grid do Dashboard**
-Usar Tailwind Grid para criar o layout Bento.
-
-**Step 3: Commit**
-```bash
-git add src/components/ui src/pages/DashboardPage.tsx
-git commit -m "feat: implement dashboard shell and stat cards"
+git add src/pages/EventsPage.tsx src/components/ui/EventCard.tsx
+git commit -m "feat: add events page with calendar and cards"
 ```

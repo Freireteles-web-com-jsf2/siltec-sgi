@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { 
   LayoutDashboard, 
   Users, 
@@ -46,9 +47,9 @@ export const Sidebar: React.FC = () => {
 
       <nav className="flex-1 px-3 space-y-2 mt-4">
         {navItems.map((item) => (
-          <a
+          <Link
             key={item.label}
-            href={item.path}
+            to={item.path}
             className={cn(
               "flex items-center gap-4 px-4 py-3 rounded-xl transition-all hover:bg-white/10 group",
               "text-text-muted hover:text-text"
@@ -56,7 +57,7 @@ export const Sidebar: React.FC = () => {
           >
             <item.icon size={22} className="shrink-0 group-hover:text-primary transition-colors" />
             {!collapsed && <span className="font-medium">{item.label}</span>}
-          </a>
+          </Link>
         ))}
       </nav>
 

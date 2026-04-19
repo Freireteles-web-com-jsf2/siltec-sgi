@@ -1,7 +1,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { MainLayout } from '@/components/layout/MainLayout'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { MembersPage } from '@/pages/MembersPage'
 
 const queryClient = new QueryClient()
 
@@ -9,9 +11,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <MainLayout>
-          <DashboardPage />
-        </MainLayout>
+        <BrowserRouter>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<DashboardPage />} />
+              <Route path="/membros" element={<MembersPage />} />
+              {/* Adicionaremos as outras rotas conforme o desenvolvimento progredir */}
+              <Route path="*" element={<DashboardPage />} />
+            </Routes>
+          </MainLayout>
+        </BrowserRouter>
       </AuthProvider>
     </QueryClientProvider>
   )

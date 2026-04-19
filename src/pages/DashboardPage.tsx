@@ -1,9 +1,6 @@
 import React from 'react'
 import { Users, Wallet, Calendar, Heart } from 'lucide-react'
-import { StatCard } from '@/components/ui/stat-card' // Adjusting path if needed, usually it's StatCard.tsx
-
-// Note: I'll use the correct path based on what I just created
-import { StatCard as MyStatCard } from '@/components/ui/StatCard'
+import { StatCard } from '@/components/ui/StatCard'
 
 export const DashboardPage: React.FC = () => {
   return (
@@ -14,24 +11,24 @@ export const DashboardPage: React.FC = () => {
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <MyStatCard 
+        <StatCard 
           title="Total de Membros" 
           value="1.248" 
           icon={Users} 
           variation={12} 
         />
-        <MyStatCard 
+        <StatCard 
           title="Dízimos da Semana" 
           value="R$ 15.420" 
           icon={Wallet} 
           variation={8} 
         />
-        <MyStatCard 
+        <StatCard 
           title="Próximos Eventos" 
           value="4" 
           icon={Calendar} 
         />
-        <MyStatCard 
+        <StatCard 
           title="Novas Decisões" 
           value="12" 
           icon={Heart} 
