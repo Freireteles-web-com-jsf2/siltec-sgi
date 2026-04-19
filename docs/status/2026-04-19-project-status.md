@@ -1,6 +1,6 @@
 # Status do Projeto: Siltec-SGI (Santuário Digital)
 **Data:** 19 de Abril de 2026
-**Versão:** 0.6.0 (MVP com Autenticação)
+**Versão:** 0.7.0 (MVP com Autenticação e Financeiro)
 
 ## 1. O que foi Concluído ✅
 
@@ -74,4 +74,4 @@ src/
 ```
 
 ---
-**Status:** Build estável e passando. Autenticação básica funcionando. Próximo foco na funcionalidade de Grupos e no setup do banco de dados real.
+**Status:** Build estável e passando. Autenticação básica e todas as páginas de visualização funcionando com dados mockados/reais. Próximo foco na funcionalidade de Grupos e no setup do banco de dados real.
