@@ -11,7 +11,7 @@ body {
 }
 
 @layer utilities {
-  .bg-glass {
+  .bg-santuario-glass {
     @apply bg-white/10 backdrop-blur-lg border border-white/20;
   }
 }
