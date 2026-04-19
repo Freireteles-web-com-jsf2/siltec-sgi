@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { 
   LayoutDashboard, 
   Users, 
@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import { useAuth } from '@/contexts/AuthContext'
 
 const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
@@ -23,6 +24,13 @@ const navItems = [
 
 export const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false)
+  const { signOut } = useAuth()
+  const navigate = useNavigate()
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/login')
+  }
 
   return (
     <aside className={cn(
@@ -64,6 +72,7 @@ export const Sidebar: React.FC = () => {
       <div className="p-4 border-t border-white/10">
         <Button 
           variant="ghost" 
+          onClick={handleSignOut}
           className={cn(
             "w-full justify-start gap-4 text-danger hover:bg-danger/10 hover:text-danger rounded-xl",
             collapsed && "px-3"
