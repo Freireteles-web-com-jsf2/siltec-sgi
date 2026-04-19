@@ -1,6 +1,6 @@
 # Status do Projeto: Siltec-SGI (Santuário Digital)
 **Data:** 19 de Abril de 2026
-**Versão:** 0.5.0 (MVP Shell)
+**Versão:** 0.6.0 (MVP com Autenticação)
 
 ## 1. O que foi Concluído ✅
 
@@ -9,7 +9,7 @@
 - **Design System:** 
   - Configuração de cores (Zinc-950, Indigo-500) e fontes (Manrope, Inter).
   - Implementação de utilitários de **Glassmorphism** (`bg-santuario-glass`).
-- **UI Framework:** shadcn/ui integrado e configurado com Lucide React.
+- **UI Framework:** shadcn/ui integrado e configurado com Lucide React. Componentes instalados: `button`, `card`, `table`, `avatar`, `badge`, `input`, `tabs`, `calendar`, `progress`, `alert`.
 - **Gerenciamento de Dados:** Configuração do cliente **Supabase** e **TanStack Query** (React Query) para sincronização de estado.
 
 ### 📱 Layout e Navegação
@@ -17,8 +17,12 @@
   - **Sidebar (Desktop):** Retrátil, com efeito de vidro e ícones Lucide.
   - **BottomNav (Mobile):** Barra inferior otimizada para dispositivos móveis.
 - **Navegação SPA:** Implementação do `react-router-dom` para transições sem reload.
+- **Proteção de Rotas:** Implementação de `ProtectedRoute` para garantir que apenas usuários autenticados acessem as áreas restritas.
 
 ### 🖼️ Interfaces (Páginas)
+- **AuthPage:**
+  - Formulário de Login e Cadastro com Supabase Auth.
+  - Exibição de mensagens de sucesso/erro (`Alert`).
 - **Dashboard:**
   - Bento Grid responsivo.
   - StatCards com indicadores de variação (↑↓).
@@ -31,21 +35,20 @@
 - **Eventos:**
   - Grid de cards de eventos com categorias coloridas.
   - Calendário visual integrado (shadcn/calendar) localizado para PT-BR.
+- **Financeiro:**
+  - Visão geral com `StatCards` (Saldo, Entradas, Saídas).
+  - Gráfico de Área (Recharts) para fluxo de caixa (mock data).
+  - Gráfico Donut (Recharts) para alocação por categoria (mock data).
+  - Barra de progresso para meta de dízimos.
+  - Tabela de transações recentes (mock data).
+  - Hooks `useTransactions` e `useFinancialSummary` integrados ao Supabase.
+
+### 🔄 Funcionalidades
+- **Autenticação de Usuários:** Login, Cadastro e Logout via Supabase Auth.
 
 ---
 
 ## 2. Próximos Passos (Backlog Imediato) 🚀
-
-### 💰 Fase Financeira (Task 8)
-- Implementar a página `/financeiro`.
-- Criar componentes de barra de progresso (Dízimos vs Meta).
-- Integrar biblioteca de gráficos (Recharts) para fluxo de caixa.
-- Lista de transações recentes com filtros de categoria.
-
-### 🔐 Segurança e Auth (Task 9)
-- Criar `AuthPage` (Login e Recuperação de Senha).
-- Proteger rotas privadas (impedir acesso ao Dashboard sem login).
-- Configurar persistência de sessão.
 
 ### 📂 Gestão de Grupos (Task 10)
 - Implementar a página `/grupos` (Departamentos e Ministérios).
@@ -61,13 +64,14 @@
 ```
 src/
 ├── api/             # Singleton Supabase
-├── components/      # UI (shadcn) e Layout (Sidebar, Nav)
+├── components/      # UI (shadcn) e Layout (Sidebar, Nav), EventCard, StatCard
 ├── contexts/        # AuthContext
-├── hooks/           # useMembers, useEvents...
+├── hooks/           # useMembers, useTransactions, useFinancialSummary
 ├── lib/             # Utilitários (cn)
-├── pages/           # Dashboard, Members, Events
-└── styles/          # Tailwind + Glassmorphism CSS
+├── pages/           # AuthPage, Dashboard, Members, Events, Financial
+├── styles/          # Tailwind + Glassmorphism CSS
+└── App.tsx          # Roteamento principal e Protected Routes
 ```
 
 ---
-**Status:** Build estável e passando. Projeto pronto para implementação de lógica de escrita (formulários e mutations).
+**Status:** Build estável e passando. Autenticação básica funcionando. Próximo foco na funcionalidade de Grupos e no setup do banco de dados real.

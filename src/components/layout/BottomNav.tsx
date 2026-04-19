@@ -6,7 +6,7 @@ import {
   Calendar, 
   Wallet, 
   Users2,
-  ArrowRightEndOnRectangleIcon 
+  LogOut 
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/contexts/AuthContext'
@@ -48,7 +48,7 @@ export const BottomNav: React.FC = () => {
         onClick={handleSignOut}
         className="text-danger hover:bg-danger/10 hover:text-danger flex flex-col items-center justify-center w-full h-full gap-1"
       >
-        <ArrowRightEndOnRectangleIcon size={20} /> {/* Use a logout icon here */}
+        <LogOut size={20} />
         <span className="text-[10px] font-medium">Sair</span>
       </Button>
     </nav>
