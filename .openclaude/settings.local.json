@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ollama launch:*)",
+      "Bash(ollama list:*)",
+      "Bash(ollama --help)",
+      "Bash(ollama ps:*)",
+      "Bash(powershell -Command \"ollama launch claude --model gemma4\")",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(ollama:*)",
+      "Bash(cmd /c \"ollama launch claude --model gemma4\" 2>&1)",
+      "Bash(start:*)",
+      "Bash(tasklist)",
+      "Bash(findstr -i claude)"
+    ]
+  }
+}
