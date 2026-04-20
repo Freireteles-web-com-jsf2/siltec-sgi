@@ -6,6 +6,7 @@ import { DashboardPage } from '@/pages/DashboardPage'
 import { MembersPage } from '@/pages/MembersPage'
 import { EventsPage } from '@/pages/EventsPage'
 import { FinancialPage } from '@/pages/FinancialPage'
+import { GroupsPage } from '@/pages/GroupsPage' // Importe GroupsPage
 import { AuthPage } from '@/pages/AuthPage'
 import React from 'react'
 
@@ -68,6 +69,17 @@ function App() {
                 <ProtectedRoute>
                   <MainLayout>
                     <FinancialPage />
+                  </MainLayout>
+                </ProtectedRoute>
+              } 
+            />
+            {/* Nova rota para Grupos */}
+            <Route 
+              path="/grupos" 
+              element={
+                <ProtectedRoute>
+                  <MainLayout>
+                    <GroupsPage />
                   </MainLayout>
                 </ProtectedRoute>
               } 

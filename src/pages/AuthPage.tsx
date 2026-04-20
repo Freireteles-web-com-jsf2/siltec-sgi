@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '@/contexts/AuthContext'
 import { supabase } from '@/api/supabaseClient'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -7,12 +9,21 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertCircle } from 'lucide-react'
 
 export const AuthPage: React.FC = () => {
+  const navigate = useNavigate()
+  const { session } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
-  const [isSignIn, setIsSignIn] = useState(true) // State for Sign In / Sign Up toggle
+  const [isSignIn, setIsSignIn] = useState(true)
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (session) {
+      navigate('/')
+    }
+  }, [session, navigate])
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,6 +36,8 @@ export const AuthPage: React.FC = () => {
         const { error: signInError } = await supabase.auth.signInWithPassword({ email, password })
         if (signInError) throw signInError
         setMessage('Login bem-sucedido! Redirecionando...')
+        // Short delay to show the success message before redirecting
+        setTimeout(() => navigate('/'), 1000)
       } else {
         const { error: signUpError } = await supabase.auth.signUp({ email, password })
         if (signUpError) throw signUpError
