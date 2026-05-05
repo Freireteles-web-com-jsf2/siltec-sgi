@@ -40,6 +40,13 @@
 
 **UI hint:** yes
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Authentication foundation (login, JWT, session persistence)
+- [ ] 01-02-PLAN.md — Role-based access control (RBAC, route guards, permission matrix)
+- [ ] 01-03-PLAN.md — Password recovery flow (simulated email, token-based reset)
+
 ---
 
 ### Phase 2: Dashboard & Overview
