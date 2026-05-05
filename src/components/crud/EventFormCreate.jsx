@@ -116,7 +116,7 @@ export default function EventFormCreate({ isOpen, onClose, onSave }) {
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
             >
               {categories.map(cat => (
-                <option key={cat} value={cat} className="bg-cosmic">{cat}</option>
+                <option key={cat} value={cat} className="bg-[#1a1a2e] text-white">{cat}</option>
               ))}
             </select>
           </div>
@@ -157,9 +157,9 @@ export default function EventFormCreate({ isOpen, onClose, onSave }) {
               onChange={(e) => setFormData({ ...formData, recurringWeeks: parseInt(e.target.value) })}
               className="px-2 py-1 bg-white/10 border border-white/20 rounded text-white text-sm"
             >
-              <option value={4} className="bg-cosmic">4 semanas</option>
-              <option value={8} className="bg-cosmic">8 semanas</option>
-              <option value={12} className="bg-cosmic">12 semanas</option>
+              <option value={4} className="bg-[#1a1a2e] text-white">4 semanas</option>
+              <option value={8} className="bg-[#1a1a2e] text-white">8 semanas</option>
+              <option value={12} className="bg-[#1a1a2e] text-white">12 semanas</option>
             </select>
           )}
         </div>

@@ -88,7 +88,7 @@ export default function TransactionFormCreate({ isOpen, onClose, onSave }) {
             className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white"
           >
             {categories.map(cat => (
-              <option key={cat} value={cat} className="bg-cosmic">{cat}</option>
+              <option key={cat} value={cat} className="bg-[#1a1a2e] text-white">{cat}</option>
             ))}
           </select>
         </div>

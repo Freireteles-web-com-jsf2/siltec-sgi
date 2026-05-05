@@ -98,9 +98,9 @@ export default function DepartmentFormEdit({ isOpen, onClose, department, onSave
             onChange={(e) => setFormData({ ...formData, status: e.target.value })}
             className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white"
           >
-            <option value="active" className="bg-cosmic">Ativo</option>
-            <option value="limited" className="bg-cosmic">Lotado</option>
-            <option value="inactive" className="bg-cosmic">Inativo</option>
+            <option value="active" className="bg-[#1a1a2e] text-white">Ativo</option>
+            <option value="limited" className="bg-[#1a1a2e] text-white">Lotado</option>
+            <option value="inactive" className="bg-[#1a1a2e] text-white">Inativo</option>
           </select>
         </div>
 

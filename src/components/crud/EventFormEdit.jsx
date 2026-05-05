@@ -138,7 +138,7 @@ export default function EventFormEdit({ isOpen, onClose, event, onSave }) {
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
             >
               {categories.map(cat => (
-                <option key={cat} value={cat} className="bg-cosmic">{cat}</option>
+                <option key={cat} value={cat} className="bg-[#1a1a2e] text-white">{cat}</option>
               ))}
             </select>
           </div>
@@ -171,8 +171,8 @@ export default function EventFormEdit({ isOpen, onClose, event, onSave }) {
             onChange={(e) => setFormData({ ...formData, status: e.target.value })}
             className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
           >
-            <option value="active" className="bg-cosmic">Ativo</option>
-            <option value="cancelled" className="bg-cosmic">Cancelado</option>
+            <option value="active" className="bg-[#1a1a2e] text-white">Ativo</option>
+            <option value="cancelled" className="bg-[#1a1a2e] text-white">Cancelado</option>
           </select>
         </div>
 

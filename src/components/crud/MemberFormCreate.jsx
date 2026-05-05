@@ -80,10 +80,10 @@ export default function MemberFormCreate({ isOpen, onClose, onSave }) {
           <select
             value={formData.department}
             onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
+            className="w-full px-4 py-2 bg-cosmic-mini border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
           >
             {departments.map(dept => (
-              <option key={dept} value={dept} className="bg-cosmic">{dept}</option>
+              <option key={dept} value={dept} className="bg-[#1a1a2e] text-white">{dept}</option>
             ))}
           </select>
         </div>
@@ -93,10 +93,10 @@ export default function MemberFormCreate({ isOpen, onClose, onSave }) {
           <select
             value={formData.status}
             onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
+            className="w-full px-4 py-2 bg-cosmic-mini border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
           >
-            <option value="ativo" className="bg-cosmic">Ativo</option>
-            <option value="inativo" className="bg-cosmic">Inativo</option>
+            <option value="ativo" className="bg-[#1a1a2e] text-white">Ativo</option>
+            <option value="inativo" className="bg-[#1a1a2e] text-white">Inativo</option>
           </select>
         </div>
 
