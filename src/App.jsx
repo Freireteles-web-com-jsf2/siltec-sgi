@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { RequireRole, RequireAnyRole } from './components/auth/RequireRole';
+import { ToastProvider } from './components/ui/Toast';
 import SidebarLayout from './components/layout/SidebarLayout';
 
 // Pages
@@ -135,7 +136,9 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
-        <AppRoutes />
+        <ToastProvider>
+          <AppRoutes />
+        </ToastProvider>
       </AuthProvider>
     </Router>
   );
