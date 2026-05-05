@@ -1,74 +1,87 @@
-# Project: Siltec-SGI
+# Siltec-SGI
 
 ## What This Is
-**Siltec‑SGI** (Santuário Digital) é uma plataforma abrangente de gestão de igrejas e ministérios, projetada para líderes religiosos, pastores e administradores. O sistema moderniza a administração eclesiástica (mordomia), oferecendo uma interface elegante, intuitiva e centralizada para acompanhamento de membros, controle financeiro, organização de eventos e estruturação de departamentos.
+
+O **Siltec-SGI** (Santuário Digital) é uma plataforma abrangente de gestão de igrejas e ministérios projetada para líderes religiosos, pastores e administradores. O sistema moderniza a administração eclesiástica (mordomia), oferecendo uma interface elegante, intuitiva e centralizada para acompanhamento de membros, controle financeiro, organização de eventos e estruturação de departamentos.
 
 ## Core Value
-Centralizar e simplificar a gestão administrativa eclesiástica, permitindo que líderes foquem no propósito comunitário e espiritual, não na burocracia.
+
+Centralizar e simplificar a administração eclesiástica através de uma interface moderna que permite aos líderes focarem em seu propósito comunitário e espiritual em vez de tarefas administrativas complexas.
 
 ## Requirements
 
 ### Validated
-- ✓ React.js com functional components e Hooks – definido no PRD
-- ✓ Tailwind CSS para estilização – definido no PRD
-- ✓ Supabase para backend e auth – definido no PRD
-- ✓ React Router DOM para roteamento – definido no PRD
+
+(Nenhum ainda — primeiro milestone é o MVP)
 
 ### Active
-- [ ] **AUTH-01**: Usuário pode fazer login com e‑mail e senha
-- [ ] **AUTH-02**: Usuário pode recuperar senha via fluxo de recuperação
-- [ ] **AUTH-03**: Usuário pode optar por “Lembrar‑me” (persistência de sessão)
-- [ ] **DASH-01**: Dashboard exibe saudação personalizada e resumo da congregação
-- [ ] **DASH-02**: Dashboard mostra métricas financeiras rápidas (dízimos/semana, gráfico sparkline)
-- [ ] **DASH-03**: Dashboard mostra crescimento comunitário (total de membros, taxa do mês)
-- [ ] **DASH-04**: Dashboard lista agenda diária (compromissos, reuniões, cultos)
-- [ ] **DASH-05**: Dashboard destaca o próximo evento em card visual
-- [ ] **MEMB-01**: Listagem de membros com foto/avatar, nome, data de registro, status, departamento e contato
-- [ ] **MEMB-02**: Filtros por departamento (abas rápidas)
-- [ ] **MEMB-03**: Exportação de dados em PDF ou CSV
-- [ ] **MEMB-04**: Controle de paginação para grandes volumes
-- [ ] **EVENT-01**: Card de promoção para mega eventos com inscrições
-- [ ] **EVENT-02**: Quadro de cultos semanais com horários recorrentes
-- [ ] **EVENT-03**: Calendário comunitário com cards independentes para eventos diversos
-- [ ] **EVENT-04**: Categorização de eventos (Retiros, Feiras, Ações Comunitárias)
-- [ ] **FIN-01**: Visão geral do capital com ações rápidas (Transferir, Gerar Relatório)
-- [ ] **FIN-02**: Acompanhamento de dízimos/metas com barra de progresso
-- [ ] **FIN-03**: Análise de fluxo de caixa com gráfico interativo
-- [ ] **FIN-04**: Alocação de fundos com gráfico donut
-- [ ] **FIN-05**: Transações recentes com indicação visual débito/crédito
-- [ ] **DEPT-01**: Estatísticas de engajamento (líderes ativos vs membros)
-- [ ] **DEPT-02**: Cartões de departamento em bento grid com líderes, vagas, status
+
+- [ ] **AUTH-01**: Usuário pode acessar o sistema com e-mail e senha
+- [ ] **AUTH-02**: Usuário pode recuperar senha através de fluxo de recuperação
+- [ ] **AUTH-03**: Usuário pode optar por "Lembrar-me" para persistência de sessão
+- [ ] **DASH-01**: Usuário visualiza resumo personalizado com saudação e métricas da congregação
+- [ ] **DASH-02**: Usuário visualiza métricas financeiras rápidas com gráficos sparkline
+- [ ] **DASH-03**: Usuário visualiza crescimento comunitário (total de membros e taxa do mês)
+- [ ] **DASH-04**: Usuário visualiza agenda diária com compromissos e cultos
+- [ ] **DASH-05**: Usuário visualiza card destacando o próximo evento importante
+- [ ] **MEMB-01**: Usuário visualiza indicadores de status da saúde cadastral (total, ativos)
+- [ ] **MEMB-02**: Usuário visualiza diretório/tabela de membros com foto/avatar, nome, data registro, status, departamento e contato
+- [ ] **MEMB-03**: Usuário pode filtrar membros por departamento via abas rápidas
+- [ ] **MEMB-04**: Usuário pode exportar relatório de diretório em PDF ou CSV
+- [ ] **MEMB-05**: Usuário navega por grandes volumes de membros via paginação
+- [ ] **EVT-01**: Usuário visualiza card promocional de mega eventos com inscrições
+- [ ] **EVT-02**: Usuário visualiza quadro de cultos semanais com horários recorrentes
+- [ ] **EVT-03**: Usuário visualiza calendário comunitário com cards de eventos (retiros, ações sociais, etc.)
+- [ ] **EVT-04**: Usuário pode filtrar eventos por categoria (Retiros, Feiras, Ações Comunitárias)
+- [ ] **EVT-05**: Usuário pode realizar inscrições rápidas e gerenciar capacidade de eventos
+- [ ] **FIN-01**: Usuário visualiza visão holística do capital operacional com ações de transferir/gerar relatório
+- [ ] **FIN-02**: Usuário acompanha dízimos/metas com comparação planejado vs realizado e barra de progresso
+- [ ] **FIN-03**: Usuário visualiza análise de fluxo de caixa com gráfico interativo de entradas vs saídas
+- [ ] **FIN-04**: Usuário visualiza alocação de fundos com gráfico donut (Missões, Programas, Operações)
+- [ ] **FIN-05**: Usuário visualiza transações recentes com indicação visual de débito/crédito
+- [ ] **GRP-01**: Usuário visualiza estatísticas de engajamento (líderes ativos vs membros)
+- [ ] **GRP-02**: Usuário visualiza cartões de departamento em bento grid com estruturação visual
+- [ ] **GRP-03**: Usuário visualiza nomes dos líderes e indicadores de vagas vs participantes
+- [ ] **GRP-04**: Usuário visualiza status de cada subunidade com avatar visual da comunidade
 
 ### Out of Scope
-- [ ] Aplicativos nativos mobile – fora do escopo do MVP (apenas web responsivo)
-- [ ] Multi‑igreja (suporte a múltiplas congregações) – foco em uma única igreja
-- [ ] Funcionalidades de IA avançada – futuro
-- [ ] Integração com sistemas externos de pagamento – futuro
+
+- Módulo de relatórios nativos (DRE e gráficos gerenciais) — planejado para versão futura com Supabase
+- Controle e acompanhamento de Escalas (Voluntários) — planejado para versão futura
+- Integração completa com Supabase Auth — MVP usará autenticação simulada
+- Aplicativo mobile nativo — foco inicial em PWA responsivo
+- Módulo de comunicação (chat, e-mail marketing) — fora do escopo do MVP
+
+## Context
+
+O Siltec-SGI surge da necessidade de modernizar a administração eclesiástica, tradicionalmente realizada de forma manual ou com ferramentas fragmentadas. O sistema adota princípios modernos de UX/UI para facilitar a adoção por líderes religiosos que podem não ter familiaridade com sistemas complexos.
+
+**Módulos principais identificados:**
+- Autenticação segura
+- Dashboard com visão geral
+- Gestão de Membros
+- Eventos e Agenda
+- Financeiro
+- Departamentos e Grupos
+
+## Constraints
+
+- **Tech Stack**: React.js com Functional Components e Hooks, Tailwind CSS, React Router DOM
+- **Design System**: Uso rigoroso de glassmorphism, gradientes suaves, elevação suave (ambient-shadow)
+- **Tipografia**: Manrope (títulos/destaques) e Inter (corpo de texto)
+- **Ícones**: Material Symbols Outlined (Google)
+- **Layout**: Responsivo mobile-first (sidebar em desktop, bottom navigation em mobile)
+- **Viewport**: Adaptação para viewports < 768px
+- **Assets**: Reuso de links online estáticos para assets visuais, lucide-react ou material-symbols para iconografia
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Usar Supabase | Backend como serviço, auth integrada, realtime, Postgres | Selecionado |
-| Usar Tailwind CSS com glassmorphism | Design moderno, rápida prototipagem, consome menos JS | Selecionado |
-| Usar React com Vite | Bundler rápido, HMR, ampla adoção | Selecionado |
-| Usar React Router DOM | Roteamento client‑side padrão para SPA | Selecionado |
-| Design responsive mobile‑first | Maior parte dos usuários acessa via mobile | Selecionado |
-
-## Evolution
-
-Este documento evolui em transições de fase e marcos. Após cada fase (via `/gsd-transition`):
-1. Requisitos invalidados? → mover para Out of Scope com razão
-2. Requisitos validados? → mover para Validated com referência da fase
-3. Novos requisitos surgidos? → adicionar a Active
-4. Decisões a registrar? → adicionar a Key Decisions
-5. “What This Is” ainda preciso? → atualizar se houver desvio
-
-Após cada marco (via `/gsd-complete-milestone`):
-1. Revisão completa de todas as seções
-2. Verificação do Core Value – ainda é a prioridade?
-3. Auditoria de Out of Scope – razões ainda válidas?
-4. Atualização de Context com estado atual
+| React.js + Tailwind CSS | Stack moderna, fácil prototipagem, ampla adoção | — Pending |
+| Design System Glassmorphism | Diferenciação visual, modernidade, alinhado ao "Santuário Digital" | — Pending |
+| Mobile-first Responsivo | Líderes precisam acessar de qualquer dispositivo | — Pending |
+| Supabase para persistência futura | Integração nativa prevista, MVP pode usar dados simulados | — Pending |
 
 ---
-*Last updated: 2026-05-04 after initialization*
+*Last updated: 2026-05-05 after initialization*

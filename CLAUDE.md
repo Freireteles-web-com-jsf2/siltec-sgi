@@ -1,61 +1,120 @@
-# CLAUDE.md — Siltec-SGI
+# CLAUDE.md — Siltec-SGI Project Guide
+
+## Project Context
+
+**Project Name:** Siltec-SGI (Santuário Digital)
+**Description:** Plataforma abrangente de gestão de igrejas e ministérios com interface moderna (glassmorphism, Tailwind CSS, React.js)
+
+**Core Value:** Centralizar e simplificar a administração eclesiástica através de uma interface moderna que permite aos líderes focarem em seu propósito comunitário e espiritual.
+
+---
 
 ## GSD Workflow
 
-Siga rigorosamente o fluxo GSD (Get Shit Done) para cada fase:
+This project uses **Get Shit Done (GSD)** workflow for structured development.
 
-1. **Discuss** (`/gsd-discuss-phase [n]`) — Reunir contexto, esclarecer abordagem
-2. **Plan** (`/gsd-plan-phase [n]`) — Criar plano detalhado (PLAN.md) com verificação
-3. **Execute** (`/gsd-execute-phase [n]`) — Executar planos com commits atômicos
-4. **Verify** (`/gsd-verify-work`) — Validar entrega via UAT conversacional
-5. **Transition** (`/gsd-transition`) — Atualizar PROJECT.md, REQUERIMENTS.md, ROADMAP.md
+### Current State
 
-## Projeto
+- **Milestone:** MVP (Phases 1-6)
+- **Current Phase:** Phase 1 — Authentication System
+- **Requirements:** 27 v1 requirements defined
+- **Mode:** YOLO (auto-approve, just execute)
+- **Granularity:** Standard (5-8 phases, 3-5 plans each)
+- **Execution:** Parallel (independent plans run simultaneously)
 
-**Nome:** Siltec-SGI (Santuário Digital)  
-**Versão:** 1.0.0 (MVP)  
-**Stack:** React 19 + Vite 8 + Tailwind CSS 4 + Supabase  
-**Design:** Glassmorphism, mobile-first, Material Symbols + Lucide React  
+### Key Commands
 
-## Roadmap Atual
+- `/gsd-discuss-phase 1` — Gather context and clarify approach for Phase 1
+- `/gsd-plan-phase 1` — Create detailed plan for Phase 1
+- `/gsd-execute-phase 1` — Execute all plans in Phase 1
+- `/gsd-progress` — Check project progress and next steps
+- `/gsd-next` — Auto-advance to next logical step
 
-| Fase | Nome | Status |
-|------|------|--------|
-| 1 | Auth & Foundation | Pendente |
-| 2 | Member Management | Pendente |
-| 3 | Departments | Pendente |
-| 4 | Events & Calendar | Pendente |
-| 5 | Financial Module | Pendente |
-| 6 | Dashboard | Pendente |
+### Workflow Stages
 
-## Padrões de Código
-
-- **Componentes:** Functional Components + Hooks, extensão `.jsx`
-- **Estilização:** Tailwind CSS utilitário, classes glassmorphism definidas no `tailwind.config.js`
-- **Roteamento:** React Router DOM v7
-- **Backend:** Supabase (Postgres + Auth + Realtime + Storage)
-- **Formulários:** React Hook Form + Zod validation
-- **Tabelas:** TanStack Table (headless)
-- **Gráficos:** Recharts (sparklines, donut, linha)
-- **State:** Zustand (leve, 1.2KB gzip)
-- **Testes:** Jest + React Testing Library
-
-## Requisitos Não Funcionais
-
-- **NFR-01:** Design System com glassmorphism e `ambient-shadow` no Tailwind
-- **NFR-02:** Responsivo mobile‑first (<768px: bottom nav, sidebar em desktop)
-- **NFR-03:** Ícones via `lucide-react` e `material-symbols`
-- **NFR-04:** Integração oficial com Supabase (Auth + DB)
-
-## Comandos Git
-
-- Commits atômicos seguindo padrão: `feat:`, `fix:`, `docs:`, `chore:`
-- Planejamentos e documentação em `.planning/` são comitados
-- Não comitar `.env`, `node_modules/`, builds de produção
-
-## Próximo Passo
-
-Iniciar `/gsd-discuss-phase 1` para discutir a Fase 1 (Auth & Foundation).
+1. **Questioning** → PROJECT.md (completed)
+2. **Research** → `.planning/research/` (optional)
+3. **Requirements** → REQUIREMENTS.md (completed)
+4. **Roadmap** → ROADMAP.md (completed)
+5. **Discuss Phase** → Gather context (next)
+6. **Plan Phase** → Create PLAN.md
+7. **Execute Phase** → Run plans with atomic commits
+8. **Verify** → Confirm requirements met
+9. **Transition** → Update PROJECT.md, move to next phase
 
 ---
-*Gerado por /gsd-new-project em 2026-05-04*
+
+## Tech Stack
+
+- **Frontend:** React.js (Functional Components + Hooks)
+- **Routing:** React Router DOM (SPA)
+- **Styling:** Tailwind CSS (utility-first)
+- **Typography:** Manrope (headings), Inter (body)
+- **Icons:** Material Symbols Outlined (Google)
+- **Layout:** Responsive (sidebar desktop, bottom nav mobile)
+
+### Design System
+
+- Glassmorphism effects
+- Soft gradients
+- Ambient shadow elevation
+- Mobile-first (< 768px viewport)
+
+---
+
+## Project Structure
+
+```
+.planning/
+├── PROJECT.md          # Project context and core value
+├── REQUIREMENTS.md     # v1 requirements with REQ-IDs
+├── ROADMAP.md          # Phase structure (6 phases)
+├── STATE.md            # Project memory and session context
+├── config.json         # Workflow preferences
+└── research/           # Domain research (optional)
+    ├── STACK.md
+    ├── FEATURES.md
+    ├── ARCHITECTURE.md
+    ├── PITFALLS.md
+    └── SUMMARY.md
+```
+
+---
+
+## Development Guidelines
+
+### Code Style
+
+- Functional Components with Hooks
+- Tailwind CSS utility classes
+- Mobile-first responsive design
+- Component-based architecture
+
+### Git Workflow
+
+- Atomic commits for each task/plan
+- Planning docs tracked in version control
+- `.planning/` directory is committed
+
+### UI/UX Principles
+
+- Glassmorphism and modern aesthetics
+- Smooth transitions and hover effects
+- Clear visual hierarchy
+- Intuitive navigation (sidebar + bottom nav)
+
+---
+
+## Phase 1: Authentication System
+
+**Requirements:**
+- AUTH-01: Login with email/password
+- AUTH-02: Password recovery flow
+- AUTH-03: "Remember me" session persistence
+
+**Next Step:** Run `/gsd-discuss-phase 1` to gather implementation context.
+
+---
+
+*Generated: 2026-05-05*
+*Last updated: 2026-05-05 after project initialization*
