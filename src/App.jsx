@@ -6,15 +6,15 @@ import { RequireRole, RequireAnyRole } from './components/auth/RequireRole';
 // Pages
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import MembersPage from './pages/MembersPage';
+import EventsPage from './pages/EventsPage';
+import FinancialPage from './pages/FinancialPage';
+import DepartmentsPage from './pages/DepartmentsPage';
 import AccessDeniedPage from './pages/AccessDeniedPage';
 import RecoveryForm from './components/auth/RecoveryForm';
 import ResetPasswordForm from './components/auth/ResetPasswordForm';
 
-// Placeholder components for protected routes (to be implemented in later phases)
-const MembersPage = () => <div className="p-8"><h1>Membros</h1><p>Phase 3</p></div>;
-const EventsPage = () => <div className="p-8"><h1>Eventos</h1><p>Phase 4</p></div>;
-const FinancialPage = () => <div className="p-8"><h1>Financeiro</h1><p>Phase 5</p></div>;
-const DepartmentsPage = () => <div className="p-8"><h1>Departamentos</h1><p>Phase 6</p></div>;
+// Placeholder component for Super Admin
 const UserManagementPage = () => <div className="p-8"><h1>Gerenciamento de Usuários</h1><p>Super Admin</p></div>;
 
 // Password Recovery Pages
