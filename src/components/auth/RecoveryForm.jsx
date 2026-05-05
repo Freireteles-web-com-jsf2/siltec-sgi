@@ -43,7 +43,7 @@ export default function RecoveryForm() {
       {!success && (
         <>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-1">
+            <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-200">
               E-mail
             </label>
             <input
@@ -51,14 +51,14 @@ export default function RecoveryForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
               placeholder="seu@email.com"
               required
             />
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center py-2">
+            <div className="text-red-400 text-sm text-center py-2">
               {error}
             </div>
           )}
@@ -66,7 +66,7 @@ export default function RecoveryForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-medium py-2 px-4 rounded-lg transition-all shadow-lg disabled:opacity-50"
           >
             {loading ? 'Enviando...' : 'Enviar link de recuperação'}
           </button>
@@ -75,20 +75,20 @@ export default function RecoveryForm() {
 
       {success && (
         <div className="text-center space-y-4">
-          <div className="text-green-600 text-sm font-medium py-2">
+          <div className="text-green-400 text-sm font-medium py-2">
             {success.message}
           </div>
 
           {/* MVP Simulation: Show token for testing (per D-08) */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-left">
-            <p className="text-xs text-yellow-800 font-medium mb-2">
-              [MVP Simulation] Use this token for testing:
+          <div className="bg-yellow-900/50 border border-yellow-700 rounded-lg p-4 text-left">
+            <p className="text-xs text-yellow-400 font-medium mb-2">
+              [Simulação MVP] Use este token para testar:
             </p>
-            <code className="text-xs break-all text-yellow-900 bg-yellow-100 px-2 py-1 rounded">
+            <code className="text-xs break-all text-yellow-300 bg-yellow-900 px-2 py-1 rounded">
               {success.debugToken}
             </code>
-            <p className="text-xs text-yellow-700 mt-2">
-              Reset URL: /reset-password?token={success.debugToken}
+            <p className="text-xs text-yellow-500 mt-2">
+              URL: /reset-password?token={success.debugToken}
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function RecoveryForm() {
       <div className="text-center">
         <Link
           to="/login"
-          className="text-sm text-blue-500 hover:underline"
+          className="text-sm text-purple-400 hover:underline"
         >
           Voltar ao login
         </Link>

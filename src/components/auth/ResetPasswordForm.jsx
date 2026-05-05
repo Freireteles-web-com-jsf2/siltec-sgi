@@ -66,12 +66,12 @@ export default function ResetPasswordForm() {
   if (tokenValid === false) {
     return (
       <div className="text-center space-y-4">
-        <div className="text-red-500 text-sm font-medium py-2">
+        <div className="text-red-400 text-sm font-medium py-2">
           {error || 'Token inválido'}
         </div>
         <Link
           to="/recover-password"
-          className="text-blue-500 hover:underline text-sm"
+          className="text-purple-400 hover:underline text-sm"
         >
           Solicitar novo link de recuperação
         </Link>
@@ -80,7 +80,7 @@ export default function ResetPasswordForm() {
   }
 
   if (tokenValid === null) {
-    return <div className="text-center py-4">Validando token...</div>;
+    return <div className="text-center py-4 text-gray-300">Validando token...</div>;
   }
 
   return (
@@ -88,7 +88,7 @@ export default function ResetPasswordForm() {
       {!success ? (
         <>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-1">
+            <label htmlFor="password" className="block text-sm font-medium mb-1 text-gray-200">
               Nova Senha
             </label>
             <input
@@ -96,7 +96,7 @@ export default function ResetPasswordForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
               placeholder="••••••••"
               required
               minLength={6}
@@ -104,7 +104,7 @@ export default function ResetPasswordForm() {
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium mb-1">
+            <label htmlFor="confirmPassword" className="block text-sm font-medium mb-1 text-gray-200">
               Confirmar Senha
             </label>
             <input
@@ -112,7 +112,7 @@ export default function ResetPasswordForm() {
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
               placeholder="••••••••"
               required
               minLength={6}
@@ -120,7 +120,7 @@ export default function ResetPasswordForm() {
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center py-2">
+            <div className="text-red-400 text-sm text-center py-2">
               {error}
             </div>
           )}
@@ -128,19 +128,19 @@ export default function ResetPasswordForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-medium py-2 px-4 rounded-lg transition-all shadow-lg disabled:opacity-50"
           >
             {loading ? 'Alterando...' : 'Resetar senha'}
           </button>
         </>
       ) : (
         <div className="text-center space-y-4">
-          <div className="text-green-600 text-sm font-medium py-2">
+          <div className="text-green-400 text-sm font-medium py-2">
             Senha alterada com sucesso!
           </div>
           <Link
             to="/login"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+            className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-medium py-2 px-4 rounded-lg transition-all"
           >
             Voltar ao Login
           </Link>
@@ -150,7 +150,7 @@ export default function ResetPasswordForm() {
       <div className="text-center">
         <Link
           to="/login"
-          className="text-sm text-blue-500 hover:underline"
+          className="text-sm text-purple-400 hover:underline"
         >
           Voltar ao login
         </Link>

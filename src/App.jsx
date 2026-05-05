@@ -5,12 +5,12 @@ import { RequireRole, RequireAnyRole } from './components/auth/RequireRole';
 
 // Pages
 import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
 import AccessDeniedPage from './pages/AccessDeniedPage';
 import RecoveryForm from './components/auth/RecoveryForm';
 import ResetPasswordForm from './components/auth/ResetPasswordForm';
 
 // Placeholder components for protected routes (to be implemented in later phases)
-const DashboardPage = () => <div className="p-8"><h1>Dashboard</h1><p>Phase 2</p></div>;
 const MembersPage = () => <div className="p-8"><h1>Membros</h1><p>Phase 3</p></div>;
 const EventsPage = () => <div className="p-8"><h1>Eventos</h1><p>Phase 4</p></div>;
 const FinancialPage = () => <div className="p-8"><h1>Financeiro</h1><p>Phase 5</p></div>;
@@ -19,11 +19,14 @@ const UserManagementPage = () => <div className="p-8"><h1>Gerenciamento de Usuá
 
 // Password Recovery Pages
 const RecoverPasswordPage = () => (
-  <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-    <div className="w-full max-w-md backdrop-blur-md bg-white/20 border border-white/30 shadow-xl rounded-xl p-8">
+  <div className="min-h-screen bg-cosmic flex items-center justify-center p-4">
+    <div className="w-full max-w-md card-glass rounded-2xl p-8">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-gray-800">Recuperar Senha</h1>
-        <p className="text-gray-600 mt-2">Informe seu e-mail para receber o link de recuperação</p>
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-2xl">✝</span>
+          <h1 className="text-2xl font-bold text-white">Recuperar Senha</h1>
+        </div>
+        <p className="text-gray-400 mt-2">Informe seu e-mail para receber o link de recuperação</p>
       </div>
       <RecoveryForm />
     </div>
@@ -31,11 +34,14 @@ const RecoverPasswordPage = () => (
 );
 
 const ResetPasswordPage = () => (
-  <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-    <div className="w-full max-w-md backdrop-blur-md bg-white/20 border border-white/30 shadow-xl rounded-xl p-8">
+  <div className="min-h-screen bg-cosmic flex items-center justify-center p-4">
+    <div className="w-full max-w-md card-glass rounded-2xl p-8">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-gray-800">Nova Senha</h1>
-        <p className="text-gray-600 mt-2">Digite sua nova senha</p>
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-2xl">✝</span>
+          <h1 className="text-2xl font-bold text-white">Nova Senha</h1>
+        </div>
+        <p className="text-gray-400 mt-2">Digite sua nova senha</p>
       </div>
       <ResetPasswordForm />
     </div>

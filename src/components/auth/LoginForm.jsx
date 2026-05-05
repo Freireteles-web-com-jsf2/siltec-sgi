@@ -27,34 +27,34 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">E-mail</label>
+        <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-200">E-mail</label>
         <input
           id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-blue-400 focus:outline-none"
+          className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400"
           placeholder="seu@email.com"
           required
         />
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium mb-1">Senha</label>
+        <label htmlFor="password" className="block text-sm font-medium mb-1 text-gray-200">Senha</label>
         <div className="relative">
           <input
             id="password"
             type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-blue-400 focus:outline-none pr-10"
+            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-400 focus:outline-none text-white placeholder-gray-400 pr-10"
             placeholder="••••••••"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400"
           >
             {showPassword ? '🙈' : '👁️'}
           </button>
@@ -62,7 +62,7 @@ export default function LoginForm() {
       </div>
 
       <div className="flex items-center justify-between">
-        <label className="flex items-center gap-2 text-sm">
+        <label className="flex items-center gap-2 text-sm text-gray-300">
           <input
             type="checkbox"
             checked={rememberMe}
@@ -71,20 +71,20 @@ export default function LoginForm() {
           />
           Lembrar-me
         </label>
-        <a href="/recover-password" className="text-sm text-blue-500 hover:underline">
+        <a href="/recover-password" className="text-sm text-purple-400 hover:underline">
           Esqueceu sua senha?
         </a>
       </div>
 
       {error && (
-        <div className="text-red-500 text-sm text-center py-2">
+        <div className="text-red-400 text-sm text-center py-2">
           {error}
         </div>
       )}
 
       <button
         type="submit"
-        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+        className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-medium py-2 px-4 rounded-lg transition-all shadow-lg"
       >
         Entrar
       </button>
