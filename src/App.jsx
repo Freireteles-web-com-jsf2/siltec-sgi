@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { RequireRole, RequireAnyRole } from './components/auth/RequireRole';
+import SidebarLayout from './components/layout/SidebarLayout';
 
 // Pages
 import LoginPage from './pages/LoginPage';
@@ -63,12 +64,12 @@ function AppRoutes() {
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/access-denied" element={<AccessDeniedPage />} />
 
-      {/* Dashboard - accessible by all authenticated users */}
+      {/* Protected routes with Sidebar */}
       <Route
         path="/dashboard"
         element={
           <RequireRole role="member">
-            <DashboardPage />
+            <SidebarLayout><DashboardPage /></SidebarLayout>
           </RequireRole>
         }
       />
@@ -78,7 +79,7 @@ function AppRoutes() {
         path="/members"
         element={
           <RequireAnyRole roles={['leader', 'super_admin']}>
-            <MembersPage />
+            <SidebarLayout><MembersPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
@@ -88,7 +89,7 @@ function AppRoutes() {
         path="/events"
         element={
           <RequireAnyRole roles={['leader', 'super_admin']}>
-            <EventsPage />
+            <SidebarLayout><EventsPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
@@ -98,7 +99,7 @@ function AppRoutes() {
         path="/departments"
         element={
           <RequireAnyRole roles={['leader', 'super_admin']}>
-            <DepartmentsPage />
+            <SidebarLayout><DepartmentsPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
@@ -108,7 +109,7 @@ function AppRoutes() {
         path="/financial"
         element={
           <RequireAnyRole roles={['treasurer', 'super_admin', 'leader']}>
-            <FinancialPage />
+            <SidebarLayout><FinancialPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
@@ -118,7 +119,7 @@ function AppRoutes() {
         path="/users"
         element={
           <RequireRole role="super_admin">
-            <UserManagementPage />
+            <SidebarLayout><UserManagementPage /></SidebarLayout>
           </RequireRole>
         }
       />
