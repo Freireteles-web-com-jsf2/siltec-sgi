@@ -13,6 +13,16 @@ Requirements for MVP initial release. Each maps to roadmap phases.
 - [ ] **AUTH-02**: Usuário pode recuperar senha através de fluxo de recuperação
 - [ ] **AUTH-03**: Usuário pode optar por "Lembrar-me" para persistência opcional da sessão
 
+### Access Control
+
+- [ ] **ACESSO-01**: Sistema deve diferenciar tipos de usuário (Membro, Líder, Tesoureiro, Super Admin)
+- [ ] **ACESSO-02**: Membros só podem visualizar informações básicas (perfil próprio, eventos)
+- [ ] **ACESSO-03**: Líderes podem cadastrar, editar e visualizar em Membros, Eventos, Departamentos e Dashboard
+- [ ] **ACESSO-04**: Líderes têm apenas permissão de visualização no módulo Financeiro
+- [ ] **ACESSO-05**: Tesoureiros têm permissão CRUD total apenas no módulo Financeiro
+- [ ] **ACESSO-06**: Super Admin tem privilégios totais de CRUD em todos os módulos
+- [ ] **ACESSO-07**: Super Admin pode gerenciar papéis e permissões de outros usuários
+
 ### Dashboard
 
 - [ ] **DASH-01**: Usuário visualiza saudação personalizada com resumo imediato da congregação (número de almas, eventos essenciais)
@@ -92,6 +102,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-01 | Phase 1 | Pending |
 | AUTH-02 | Phase 1 | Pending |
 | AUTH-03 | Phase 1 | Pending |
+| ACESSO-01 | Phase 1 | Pending |
+| ACESSO-02 | Phase 1 | Pending |
+| ACESSO-03 | Phase 1 | Pending |
+| ACESSO-04 | Phase 1 | Pending |
+| ACESSO-05 | Phase 1 | Pending |
+| ACESSO-06 | Phase 1 | Pending |
+| ACESSO-07 | Phase 1 | Pending |
 | DASH-01 | Phase 2 | Pending |
 | DASH-02 | Phase 2 | Pending |
 | DASH-03 | Phase 2 | Pending |
@@ -118,8 +135,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GRP-04 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 27 total
-- Mapped to phases: 27
+- v1 requirements: 34 total
+- Mapped to phases: 34
 - Unmapped: 0 ✓
 
 ---

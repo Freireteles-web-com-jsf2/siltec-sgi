@@ -2,13 +2,13 @@
 
 **Created:** 2026-05-05
 **Total Phases:** 6
-**Total v1 Requirements:** 27
+**Total v1 Requirements:** 34
 
 ## Phase Overview
 
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
-| 1 | Authentication System | Implement secure login, password recovery, and session persistence | AUTH-01, AUTH-02, AUTH-03 | 3 |
+| 1 | Authentication System | Implement secure login, password recovery, session persistence, and role-based access control | AUTH-01, AUTH-02, AUTH-03, ACESSO-01, ACESSO-02, ACESSO-03, ACESSO-04, ACESSO-05, ACESSO-06, ACESSO-07 | 10 |
 | 2 | Dashboard & Overview | Build main dashboard with metrics, financial summary, and daily agenda | DASH-01, DASH-02, DASH-03, DASH-04, DASH-05 | 5 |
 | 3 | Members Management | Create member directory with filters, pagination, and export capabilities | MEMB-01, MEMB-02, MEMB-03, MEMB-04, MEMB-05 | 5 |
 | 4 | Events & Agenda | Implement event calendar, weekly services, and registration system | EVT-01, EVT-02, EVT-03, EVT-04, EVT-05 | 5 |
@@ -21,15 +21,22 @@
 
 ### Phase 1: Authentication System
 
-**Goal:** Implement secure login, password recovery, and session persistence
+**Goal:** Implement secure login, password recovery, session persistence, and role-based access control
 
 **Requirements:**
-- AUTH-01, AUTH-02, AUTH-03
+- AUTH-01, AUTH-02, AUTH-03, ACESSO-01, ACESSO-02, ACESSO-03, ACESSO-04, ACESSO-05, ACESSO-06, ACESSO-07
 
 **Success Criteria:**
 1. User can access the system with email and password
 2. User can recover password through a dedicated recovery flow
 3. User can opt for "Remember me" to persist session across browser sessions
+4. System differentiates user types (Member, Leader, Treasurer, Super Admin)
+5. Members can only view basic information (own profile, events)
+6. Leaders can create, edit, and view in Members, Events, Departments, and Dashboard modules
+7. Leaders have only view permission in the Financial module
+8. Treasurers have full CRUD permission only in the Financial module
+9. Super Admin has full CRUD privileges across all modules
+10. Super Admin can manage roles and permissions of other users
 
 **UI hint:** yes
 
@@ -126,11 +133,11 @@
 
 ## Milestones
 
-### Milestone 1: MVP (Phases 1-6)
+### Milestone1: MVP (Phases 1-6)
 
 **Target:** Complete v1 requirements for core modules
 
-**Coverage:** 27/27 v1 requirements (100%)
+**Coverage:** 34/34 v1 requirements (100%)
 
 ---
 

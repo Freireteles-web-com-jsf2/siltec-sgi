@@ -19,6 +19,13 @@ Centralizar e simplificar a administração eclesiástica através de uma interf
 - [ ] **AUTH-01**: Usuário pode acessar o sistema com e-mail e senha
 - [ ] **AUTH-02**: Usuário pode recuperar senha através de fluxo de recuperação
 - [ ] **AUTH-03**: Usuário pode optar por "Lembrar-me" para persistência de sessão
+- [ ] **ACESSO-01**: Sistema deve diferenciar tipos de usuário (Membro, Líder, Tesoureiro, Super Admin)
+- [ ] **ACESSO-02**: Membros só podem visualizar informações básicas (perfil próprio, eventos)
+- [ ] **ACESSO-03**: Líderes podem cadastrar, editar e visualizar em Membros, Eventos, Departamentos e Dashboard
+- [ ] **ACESSO-04**: Líderes têm apenas permissão de visualização no módulo Financeiro
+- [ ] **ACESSO-05**: Tesoureiros têm permissão CRUD total apenas no módulo Financeiro
+- [ ] **ACESSO-06**: Super Admin tem privilégios totais de CRUD em todos os módulos
+- [ ] **ACESSO-07**: Super Admin pode gerenciar papéis e permissões de outros usuários
 - [ ] **DASH-01**: Usuário visualiza resumo personalizado com saudação e métricas da congregação
 - [ ] **DASH-02**: Usuário visualiza métricas financeiras rápidas com gráficos sparkline
 - [ ] **DASH-03**: Usuário visualiza crescimento comunitário (total de membros e taxa do mês)
@@ -32,8 +39,8 @@ Centralizar e simplificar a administração eclesiástica através de uma interf
 - [ ] **EVT-01**: Usuário visualiza card promocional de mega eventos com inscrições
 - [ ] **EVT-02**: Usuário visualiza quadro de cultos semanais com horários recorrentes
 - [ ] **EVT-03**: Usuário visualiza calendário comunitário com cards de eventos (retiros, ações sociais, etc.)
-- [ ] **EVT-04**: Usuário pode filtrar eventos por categoria (Retiros, Feiras, Ações Comunitárias)
-- [ ] **EVT-05**: Usuário pode realizar inscrições rápidas e gerenciar capacidade de eventos
+- [ ] **EVT-04**: Usuário pode realizar inscrições rápidas e gerenciar capacidade de eventos
+- [ ] **EVT-05**: Usuário pode filtrar eventos por categoria (Retiros, Feiras, Ações Comunitárias)
 - [ ] **FIN-01**: Usuário visualiza visão holística do capital operacional com ações de transferir/gerar relatório
 - [ ] **FIN-02**: Usuário acompanha dízimos/metas com comparação planejado vs realizado e barra de progresso
 - [ ] **FIN-03**: Usuário visualiza análise de fluxo de caixa com gráfico interativo de entradas vs saídas
