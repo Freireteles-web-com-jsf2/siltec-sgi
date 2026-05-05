@@ -1,152 +1,146 @@
 # Roadmap: Siltec-SGI
 
 **Created:** 2026-05-05
-**Total Phases:** 6
-**Total v1 Requirements:** 34
+**Milestone:** v2.0 CRUD Operations
+**Total Phases:** 4
+**Total v1 Requirements:** 30
+
+---
 
 ## Phase Overview
 
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
-| 1 | Authentication System | Implement secure login, password recovery, session persistence, and role-based access control | AUTH-01, AUTH-02, AUTH-03, ACESSO-01, ACESSO-02, ACESSO-03, ACESSO-04, ACESSO-05, ACESSO-06, ACESSO-07 | 10 |
-| 2 | Dashboard & Overview | Build main dashboard with metrics, financial summary, and daily agenda | DASH-01, DASH-02, DASH-03, DASH-04, DASH-05 | 5 |
-| 3 | Members Management | Create member directory with filters, pagination, and export capabilities | MEMB-01, MEMB-02, MEMB-03, MEMB-04, MEMB-05 | 5 |
-| 4 | Events & Agenda | Implement event calendar, weekly services, and registration system | EVT-01, EVT-02, EVT-03, EVT-04, EVT-05 | 5 |
-| 5 | Financial Management | Build financial overview, tithe tracking, cash flow, and transaction views | FIN-01, FIN-02, FIN-03, FIN-04, FIN-05 | 5 |
-| 6 | Departments & Groups | Create department cards, engagement stats, and group management | GRP-01, GRP-02, GRP-03, GRP-04 | 4 |
+| 7 | Members CRUD | Implementar operações CRUD para membros com formulários e persistência | MEMB-CRUD-01 to MEMB-CRUD-06, INF-01 to INF-04 | 10 |
+| 8 | Events CRUD | Implementar operações CRUD para eventos com formulários e capacidade | EVT-CRUD-01 to EVT-CRUD-06 | 6 |
+| 9 | Departments CRUD | Implementar operações CRUD para departamentos com gestão de líderes | DEPT-CRUD-01 to DEPT-CRUD-06 | 6 |
+| 10 | Financial CRUD | Implementar operações CRUD para transações financeiras | FIN-CRUD-01 to FIN-CRUD-06 | 6 |
 
 ---
 
 ## Phase Details
 
-### Phase 1: Authentication System
+### Phase 7: Members CRUD
 
-**Goal:** Implement secure login, password recovery, session persistence, and role-based access control
+**Goal:** Implementar operações CRUD para membros com formulários, validação e persistência
 
 **Requirements:**
-- AUTH-01, AUTH-02, AUTH-03, ACESSO-01, ACESSO-02, ACESSO-03, ACESSO-04, ACESSO-05, ACESSO-06, ACESSO-07
+- MEMB-CRUD-01: Cadastrar novo membro
+- MEMB-CRUD-02: Editar membro
+- MEMB-CRUD-03: Excluir membro
+- MEMB-CRUD-04: Bulk delete
+- MEMB-CRUD-05: Ativar/desativar status
+- MEMB-CRUD-06: Importar CSV
+- INF-01: Persistência localStorage
+- INF-02: Toast notifications
+- INF-03: Validação de formulários
+- INF-04: Verificação de permissões
 
 **Success Criteria:**
-1. User can access the system with email and password
-2. User can recover password through a dedicated recovery flow
-3. User can opt for "Remember me" to persist session across browser sessions
-4. System differentiates user types (Member, Leader, Treasurer, Super Admin)
-5. Members can only view basic information (own profile, events)
-6. Leaders can create, edit, and view in Members, Events, Departments, and Dashboard modules
-7. Leaders have only view permission in the Financial module
-8. Treasurers have full CRUD permission only in the Financial module
-9. Super Admin has full CRUD privileges across all modules
-10. Super Admin can manage roles and permissions of other users
+1. Usuário pode cadastrar novo membro através de modal comvalidação
+2. Usuário pode editar membro existente com pré-preenchimento
+3. Usuário pode excluir membro com dialog deconfirmação
+4. Usuário pode selecionar e excluir múltiplos membros
+5. Usuário pode ativar/desativar status de membro com um clique
+6. Usuário pode importar membros via arquivo CSV
+7. Sistema salva dados em localStorage
+8. Sistema exibe notificações toast para feedback
+9. Sistema exibe erros de validação no formulário
+10. Sistema verifica permissões do usuário
 
 **UI hint:** yes
 
-**Plans:** 3 plans
-
-Plans:
-- [ ] 01-01-PLAN.md — Authentication foundation (login, JWT, session persistence)
-- [ ] 01-02-PLAN.md — Role-based access control (RBAC, route guards, permission matrix)
-- [ ] 01-03-PLAN.md — Password recovery flow (simulated email, token-based reset)
+**Plans:** 1 plan
 
 ---
 
-### Phase 2: Dashboard & Overview
+### Phase 8: Events CRUD
 
-**Goal:** Build main dashboard with metrics, financial summary, and daily agenda
+**Goal:** Implementar operações CRUD para eventos com gestão de capacidades e inscrições
 
 **Requirements:**
-- DASH-01, DASH-02, DASH-03, DASH-04, DASH-05
+- EVT-CRUD-01: Criar evento
+- EVT-CRUD-02: Editar evento
+- EVT-CRUD-03: Excluir evento
+- EVT-CRUD-04: Cancelar evento
+- EVT-CRUD-05: Gerenciar inscrições
+- EVT-CRUD-06: Eventos recorrentes
 
 **Success Criteria:**
-1. User sees personalized greeting with congregation summary (souls count, essential events)
-2. User sees weekly financial metrics with sparkline chart visualization
-3. User sees community growth (total members and monthly growth rate)
-4. User sees daily agenda with appointments, meetings, and scheduled services
-5. User sees highlighted card for the next/most important upcoming event
+1. Usuário pode criar novo evento com formulário completo
+2. Usuário pode editar detalhes do evento
+3. Usuário pode excluir evento com confirmação
+4. Usuário pode cancelar evento (marcar cancelado)
+5. Usuário pode aprovar/rejeitar inscrições
+6. Usuário pode criar eventos que se repetem semanalmente
 
 **UI hint:** yes
+
+**Plans:** 1 plan
 
 ---
 
-### Phase 3: Members Management
+### Phase 9: Departments CRUD
 
-**Goal:** Create member directory with filters, pagination, and export capabilities
+**Goal:** Implementar operações CRUD para departamentos com gestão de líderes e membros
 
 **Requirements:**
-- MEMB-01, MEMB-02, MEMB-03, MEMB-04, MEMB-05
+- DEPT-CRUD-01: Criar departamento
+- DEPT-CRUD-02: Editar departamento
+- DEPT-CRUD-03: Excluir departamento
+- DEPT-CRUD-04: Atribuir líder
+- DEPT-CRUD-05: Gerenciar membros
+- DEPT-CRUD-06: Sub-grupos
 
 **Success Criteria:**
-1. User sees health indicators (total members, active count)
-2. User sees member directory table with avatar/photo, name, registration date, status, department, and contact
-3. User can filter members by department using quick tabs
-4. User can export directory report in PDF or CSV format
-5. User can navigate large member volumes via pagination controls
+1. Usuário pode criar novo departamento
+2. Usuário pode editar departamento existente
+3. Usuário pode excluir departamento com aviso de membros
+4. Usuário pode atribuir ou alterar líder do departamento
+5. Usuário pode adicionar/remover membros no departamento
+6. Usuário pode criar sub-grupos dentro de departamentos
 
 **UI hint:** yes
+
+**Plans:** 1 plan
 
 ---
 
-### Phase 4: Events & Agenda
+### Phase 10: Financial CRUD
 
-**Goal:** Implement event calendar, weekly services, and registration system
+**Goal:** Implementar operações CRUD para transações financeiras com relatórios
 
 **Requirements:**
-- EVT-01, EVT-02, EVT-03, EVT-04, EVT-05
+- FIN-CRUD-01: Criar transação
+- FINAL-CRUD-02: Editar transação
+- FIN-CRUD-03: Excluir transação
+- FIN-CRUD-04: Metas de alocação
+- FINAL-CRUD-05: Registro de dízimo
+- FIN-CRUD-06: Exportar relatórios
 
 **Success Criteria:**
-1. User sees large promotional card for mega events with registration info
-2. User sees weekly service board with recurring schedule times
-3. User sees community calendar with event cards (retreats, social actions, worship nights)
-4. User can perform quick registrations and manage event capacity
-5. User can filter events by category (Retreats, Fairs, Community Actions)
+1. Usuário pode criar transação (entrada/saída)
+2. Usuário pode editar transação existente
+3. Usuário pode excluir transação com confirmação
+4. Usuário pode criar e editar metas de alocação
+5. Usuário pode registrar dízimo por membro
+6. Usuário pode exportar relatório financeiro em PDF
 
 **UI hint:** yes
 
----
-
-### Phase 5: Financial Management
-
-**Goal:** Build financial overview, tithe tracking, cash flow, and transaction views
-
-**Requirements:**
-- FIN-01, FIN-02, FIN-03, FIN-04, FIN-05
-
-**Success Criteria:**
-1. User sees holistic operational capital view with "Transfer" and "Generate Report" actions
-2. User can track tithes/goals with planned vs actual comparison and progress bar
-3. User sees cash flow analysis with interactive chart showing inflows vs outflows
-4. User sees fund allocation with donut chart (Missions, Programs, Operations)
-5. User sees recent transactions with visual debit/credit indicators
-
-**UI hint:** yes
-
----
-
-### Phase 6: Departments & Groups
-
-**Goal:** Create department cards, engagement stats, and group management
-
-**Requirements:**
-- GRP-01, GRP-02, GRP-03, GRP-04
-
-**Success Criteria:**
-1. User sees engagement statistics (active leaders vs total members)
-2. User sees department cards in bento grid layout with visual structure
-3. User sees leader names, vacancy vs participant indicators per ministry
-4. User sees status of each subunit with community visual avatar
-
-**UI hint:** yes
+**Plans:** 1 plan
 
 ---
 
 ## Milestones
 
-### Milestone1: MVP (Phases 1-6)
+### Milestone v2.0: CRUD Operations
 
-**Target:** Complete v1 requirements for core modules
+**Target:** Complete CRUD operations for all modules
 
-**Coverage:** 34/34 v1 requirements (100%)
+**Coverage:** 30/30 v1 requirements (100%)
 
 ---
 
 *Roadmap created: 2026-05-05*
-*Last updated: 2026-05-05 after initialization*
+*Last updated: 2026-05-05 after v2.0 roadmap creation*

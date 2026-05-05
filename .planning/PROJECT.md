@@ -91,4 +91,34 @@ O Siltec-SGI surge da necessidade de modernizar a administração eclesiástica,
 | Supabase para persistência futura | Integração nativa prevista, MVP pode usar dados simulados | — Pending |
 
 ---
-*Last updated: 2026-05-05 after initialization*
+
+## Current Milestone: v2.0 CRUD Operations
+
+**Goal:** Adicionar operações CRUD completas aos módulos principais (Membros, Eventos, Departamentos, Financeiro)
+
+**Target features:**
+- Membros: Create, Edit, Delete
+- Eventos: Create, Edit, Delete + gestão de inscrições
+- Departamentos: Create, Edit, Delete + gestão de grupos
+- Financeiro: Create (lançamentos), Edit, Delete + relatórios
+
+---
+
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd-complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
+*Last updated: 2026-05-05 after v2.0 milestone start*
