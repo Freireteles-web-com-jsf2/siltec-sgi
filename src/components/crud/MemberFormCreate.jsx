@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../ui/Modal';
 
-const departments = ['Ministério Jovem', 'Coral', 'Diaconia', 'Kudus', 'Band'];
+const departments = ['Ministério de Louvor', 'Coral', 'Diaconia', 'Ministerio Infantil', 'Musicos'];
 
 export default function MemberFormCreate({ isOpen, onClose, onSave }) {
   const [formData, setFormData] = useState({

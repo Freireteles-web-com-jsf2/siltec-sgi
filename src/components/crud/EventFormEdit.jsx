@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../ui/Modal';
 
-const categories = ['Retiros', 'Feiras', 'Ações Comunitárias', 'Eventos'];
+const categories = ['Culto', 'Feiras', 'Ações Comunitárias', 'Eventos'];
 
 export default function EventFormEdit({ isOpen, onClose, event, onSave }) {
   const [formData, setFormData] = useState({
