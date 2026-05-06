@@ -1,10 +1,10 @@
 # Roadmap: Siltec-SGI
 
-**Created:** 2026-05-05**
-**Milestone:** v2.0 CRUD Operations ✅**
-**Status:** COMPLETE (2026-05-06)**
-**Total Phases:** 4**
-**Total v2 Requirements:** 30 (all complete) ✅**
+**Created:** 2026-05-06
+**Milestone:** v3.0 Advanced Analytics
+**Status:** PLANNING
+**Total Phases:** 5
+**Total v3 Requirements:** 22 (all planned) ✅
 
 ---
 
@@ -12,42 +12,33 @@
 
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
-| 7 | Members CRUD | Implementar operações CRUD para membros com formulários e persistência | MEMB-CRUD-01 to MEMB-CRUD-06, INF-01 to INF-04 | 10 |
-| 8 | Events CRUD | Implementar operações CRUD para eventos com formulários e capacidade | EVT-CRUD-01 to EVT-CRUD-06 | 6 |
-| 9 | Departments CRUD | Implementar operações CRUD para departamentos com gestão de líderes | DEPT-CRUD-01 to DEPT-CRUD-06 | 6 |
-| 10 | Financial CRUD | Implementar operações CRUD para transações financeiras | FIN-CRUD-01 to FIN-CRUD-06 | 6 |
+| 11 | Analytics Dashboard | Criar dashboard principal com visualização de métricas gerais | ANLT-01 to ANLT-05 | 5 |
+| 12 | Member Analytics | Implementar análises detalhadas de membros e engajamento | MEMB-ANA-01 to MEMB-ANA-05 | 5 |
+| 13 | Event Analytics | Criar painel de eventos com métricas de participação | EVT-ANA-01 to EVT-ANA-04 | 4 |
+| 14 | Financial Analytics | Desenvolver análises financeiras com projeções | FIN-ANA-01 to FIN-ANA-04 | 4 |
+| 15 | Interactive Reports | Implementar relatórios customizados e exportação | RPT-01 to RPT-04 | 4 |
 
 ---
 
 ## Phase Details
 
-### Phase 7: Members CRUD
+### Phase 11: Analytics Dashboard
 
-**Goal:** Implementar operações CRUD para membros com formulários, validação e persistência
+**Goal:** Criar dashboard analítico principal com visão geral de todos os módulos e métricas principais
 
 **Requirements:**
-- MEMB-CRUD-01: Cadastrar novo membro
-- MEMB-CRUD-02: Editar membro
-- MEMB-CRUD-03: Excluir membro
-- MEMB-CRUD-04: Bulk delete
-- MEMB-CRUD-05: Ativar/desativar status
-- MEMB-CRUD-06: Importar CSV
-- INF-01: Persistência localStorage
-- INF-02: Toast notifications
-- INF-03: Validação de formulários
-- INF-04: Verificação de permissões
+- ANLT-01: Dashboard analítico com visão geral
+- ANLT-02: Gráficos de crescimento de membros
+- ANLT-03: Distribuição de membros por departamento
+- ANLT-04: Métricas de engajamento
+- ANLT-05: Tendências financeiras
 
 **Success Criteria:**
-1. Usuário pode cadastrar novo membro através de modal comvalidação
-2. Usuário pode editar membro existente com pré-preenchimento
-3. Usuário pode excluir membro com dialog deconfirmação
-4. Usuário pode selecionar e excluir múltiplos membros
-5. Usuário pode ativar/desativar status de membro com um clique
-6. Usuário pode importar membros via arquivo CSV
-7. Sistema salva dados em localStorage
-8. Sistema exibe notificações toast para feedback
-9. Sistema exibe erros de validação no formulário
-10. Sistema verifica permissões do usuário
+1. Usuário visualiza cards com métricas principais (total membros, eventos, finanças)
+2. Usuário vê gráfico de linha com crescimento de membros
+3. Usuário visualiza gráfico de pizza com distribuição por departamento
+4. Usuário vê indicadores de engajamento (ativos vs inativos)
+5. Usuário visualiza gráfico de barras com receitas vs despesas
 
 **UI hint:** yes
 
@@ -55,25 +46,23 @@
 
 ---
 
-### Phase 8: Events CRUD
+### Phase 12: Member Analytics
 
-**Goal:** Implementar operações CRUD para eventos com gestão de capacidades e inscrições
+**Goal:** Implementar análises detalhadas de membros com métricas de engajamento, crescimento e retenção
 
 **Requirements:**
-- EVT-CRUD-01: Criar evento
-- EVT-CRUD-02: Editar evento
-- EVT-CRUD-03: Excluir evento
-- EVT-CRUD-04: Cancelar evento
-- EVT-CRUD-05: Gerenciar inscrições
-- EVT-CRUD-06: Eventos recorrentes
+- MEMB-ANA-01: Relatório de crescimento de membros
+- MEMB-ANA-02: Membros por status
+- MEMB-ANA-03: Taxa de retenção
+- MEMB-ANA-04: Membros ausentes frequentes
+- MEMB-ANA-05: Filtros analíticos para membros
 
 **Success Criteria:**
-1. Usuário pode criar novo evento com formulário completo
-2. Usuário pode editar detalhes do evento
-3. Usuário pode excluir evento com confirmação
-4. Usuário pode cancelar evento (marcar cancelado)
-5. Usuário pode aprovar/rejeitar inscrições
-6. Usuário pode criar eventos que se repetem semanalmente
+1. Usuário visualiza gráfico de crescimento mensal/trimestral/anual
+2. Usuário vê cards com membros por status (ativo, inativo, novo)
+3. Sistema calcula e exibe taxa de retenção percentual
+4. Sistema identifica e lista membros ausentes em último trimestre
+5. Usuário pode filtrar membros por status, departamento, período
 
 **UI hint:** yes
 
@@ -81,25 +70,21 @@
 
 ---
 
-### Phase 9: Departments CRUD
+### Phase 13: Event Analytics
 
-**Goal:** Implementar operações CRUD para departamentos com gestão de líderes e membros
+**Goal:** Criar painel de eventos com métricas de participação, popularidade e tendências
 
 **Requirements:**
-- DEPT-CRUD-01: Criar departamento
-- DEPT-CRUD-02: Editar departamento
-- DEPT-CRUD-03: Excluir departamento
-- DEPT-CRUD-04: Atribuir líder
-- DEPT-CRUD-05: Gerenciar membros
-- DEPT-CRUD-06: Sub-grupos
+- EVT-ANA-01: Taxa de participação em eventos
+- EVT-ANA-02: Eventos mais populares
+- EVT-ANA-03: Tendência de participação
+- EVT-ANA-04: Média de participantes por tipo
 
 **Success Criteria:**
-1. Usuário pode criar novo departamento
-2. Usuário pode editar departamento existente
-3. Usuário pode excluir departamento com aviso de membros
-4. Usuário pode atribuir ou alterar líder do departamento
-5. Usuário pode adicionar/remover membros no departamento
-6. Usuário pode criar sub-grupos dentro de departamentos
+1. Sistema calcula taxa de participação (inscritos vs presentes)
+2. Sistema mostra ranking de eventos por popularidade
+3. Usuário visualiza linha temporal de participação ao longo do tempo
+4. Sistema calcula média de participantes por categoria de evento
 
 **UI hint:** yes
 
@@ -107,25 +92,43 @@
 
 ---
 
-### Phase 10: Financial CRUD
+### Phase 14: Financial Analytics
 
-**Goal:** Implementar operações CRUD para transações financeiras com relatórios
+**Goal:** Desenvolver análises financeiras com visualização de tendências, comparações e projeções
 
 **Requirements:**
-- FIN-CRUD-01: Criar transação
-- FINAL-CRUD-02: Editar transação
-- FIN-CRUD-03: Excluir transação
-- FIN-CRUD-04: Metas de alocação
-- FINAL-CRUD-05: Registro de dízimo
-- FIN-CRUD-06: Exportar relatórios
+- FIN-ANA-01: Balanço financeiro mensal
+- FIN-ANA-02: Orçado vs realizado
+- FIN-ANA-03: Relatório de dízimos
+- FIN-ANA-04: Projeções financeiras
 
 **Success Criteria:**
-1. Usuário pode criar transação (entrada/saída)
-2. Usuário pode editar transação existente
-3. Usuário pode excluir transação com confirmação
-4. Usuário pode criar e editar metas de alocação
-5. Usuário pode registrar dízimo por membro
-6. Usuário pode exportar relatório financeiro em PDF
+1. Usuário visualiza gráfico de linhas com receitas e despesas mensais
+2. Sistema mostra gráfico de barras comparando orçado vs realizado
+3. Sistema gera relatório de dízimos por membro com totais
+4. Sistema calcula projeção simples para próximo mês baseado em tendência
+
+**UI hint:** yes
+
+**Plans:** 1 plan
+
+---
+
+### Phase 15: Interactive Reports
+
+**Goal:** Implementar sistema de relatórios customizados com exportação e agendamento
+
+**Requirements:**
+- RPT-01: Relatórios customizados
+- RPT-02: Exportação PDF/Excel
+- RPT-03: Agendamento de envio
+- RPT-04: Comparação de períodos
+
+**Success Criteria:**
+1. Usuário pode selecionar métricas para gerar relatório customizado
+2. Sistema exporta relatório em PDF e Excel
+3. Sistema permite agendar envio automático de relatórios por e-mail
+4. Usuário pode comparar dois períodos diferentes lado a lado
 
 **UI hint:** yes
 
@@ -135,13 +138,13 @@
 
 ## Milestones
 
-### Milestone v2.0: CRUD Operations
+### Milestone v3.0: Advanced Analytics
 
-**Target:** Complete CRUD operations for all modules
+**Target:** Sistema completo de analytics e relatórios para tomada de decisão
 
-**Coverage:** 30/30 v1 requirements (100%)
+**Coverage:** 22/22 v3 requirements (100%)
 
 ---
 
-*Roadmap created: 2026-05-05*
-*Last updated: 2026-05-05 after v2.0 roadmap creation*
+*Roadmap created: 2026-05-06*
+*Last updated: 2026-05-06 after v3.0 roadmap creation*
