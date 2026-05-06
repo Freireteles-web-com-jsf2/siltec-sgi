@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { getEvents, saveEvent, updateEvent, deleteEvent, getRegistrations, addRegistration, removeRegistration, approveRegistration, rejectRegistration, createRecurringEvent } from '../services/storage';
+import { getEvents, saveEvent, updateEvent, deleteEvent, getRegistrations, addRegistration, removeRegistration, approveRegistration, rejectRegistration, createRecurringEvent, getMembers } from '../services/storage';
 import { useToast } from '../components/ui/Toast';
 import EventFormCreate from '../components/crud/EventFormCreate';
 import EventFormEdit from '../components/crud/EventFormEdit';
 import ConfirmDialog from '../components/ui/ConfirmDialog';
+import Modal from '../components/ui/Modal';
 
 const weeklyServices = [
   { day: 'Domingo', time: '10:00', name: 'Culto Domenical', type: 'service' },
@@ -11,16 +12,20 @@ const weeklyServices = [
   { day: 'Sábado', time: '19:30', name: 'Noite de Adoração', type: 'worship' },
 ];
 
-const categories = ['Todos', 'Retiros', 'Feiras', 'Ações Comunitárias', 'Eventos'];
+const categories = ['Todos', 'Cultos', 'Feiras', 'Ações Comunitárias', 'Eventos'];
 
 export default function EventsPage() {
   const [events, setEvents] = useState([]);
+  const [members, setMembers] = useState([]);
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [registeredEvents, setRegisteredEvents] = useState({});
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showRegistrationsModal, setShowRegistrationsModal] = useState(false);
+  const [showMemberSelectModal, setShowMemberSelectModal] = useState(false);
+  const [registeringEventId, setRegisteringEventId] = useState(null);
+  const [memberSearch, setMemberSearch] = useState('');
   const [editingEvent, setEditingEvent] = useState(null);
   const [deletingEventId, setDeletingEventId] = useState(null);
   const [selectedEventRegs, setSelectedEventRegs] = useState([]);
@@ -32,6 +37,7 @@ export default function EventsPage() {
     if (stored.length > 0) {
       setEvents(stored);
     }
+    setMembers(getMembers());
   }, []);
 
   const filteredEvents = useMemo(() => {
@@ -78,20 +84,27 @@ export default function EventsPage() {
     setDeletingEventId(null);
   };
 
-  const handleRegister = (eventId, memberName = 'Membro') => {
-    if (!registeredEvents[eventId]) {
-      addRegistration(eventId, 1, memberName);
-      setRegisteredEvents(prev => ({ ...prev, [eventId]: true }));
-      setEvents(getEvents());
-    } else {
-      removeRegistration(eventId, 1);
-      setRegisteredEvents(prev => {
-        const updated = { ...prev };
-        delete updated[eventId];
-        return updated;
-      });
-      setEvents(getEvents());
+  const handleRegister = (eventId) => {
+    setRegisteringEventId(eventId);
+    setShowMemberSelectModal(true);
+  };
+
+  const handleMemberSelected = (member) => {
+    if (member && registeringEventId) {
+      const existingRegs = getRegistrations(registeringEventId);
+      const alreadyRegistered = existingRegs.some(r => r.memberId === member.id);
+      
+      if (alreadyRegistered) {
+        error(`${member.name} já está inscrito neste evento!`);
+      } else {
+        addRegistration(registeringEventId, member.id, member.name);
+        setRegisteredEvents(prev => ({ ...prev, [registeringEventId]: true }));
+        setEvents(getEvents());
+        success(`${member.name} inscrito no evento!`);
+      }
     }
+    setShowMemberSelectModal(false);
+    setRegisteringEventId(null);
   };
 
   const openEditModal = (event) => {
@@ -367,6 +380,64 @@ export default function EventsPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Member Selection Modal for Registration */}
+{showMemberSelectModal && (
+        <Modal isOpen={showMemberSelectModal} onClose={() => setShowMemberSelectModal(false)} title="Selecionar Membro">
+          <div className="space-y-3">
+            <p className="text-gray-400 text-sm mb-4">Selecione um membro para inscrever no evento:</p>
+            <input
+              type="text"
+              placeholder="Pesquisar membro..."
+              value={memberSearch}
+              onChange={(e) => setMemberSearch(e.target.value)}
+              className="w-full bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
+            />
+            <div className="max-h-64 overflow-y-auto space-y-2">
+              {members
+                  .filter(m => m.status === 'ativo')
+                  .filter(m => 
+                    memberSearch === '' || 
+                    m.name.toLowerCase().includes(memberSearch.toLowerCase()) ||
+                    m.email.toLowerCase().includes(memberSearch.toLowerCase())
+                  )
+                  .length === 0 ? (
+                <p className="text-gray-400">Nenhum membro encontrado</p>
+              ) : (
+                members
+                  .filter(m => m.status === 'ativo')
+                  .filter(m => 
+                    memberSearch === '' || 
+                    m.name.toLowerCase().includes(memberSearch.toLowerCase()) ||
+                    m.email.toLowerCase().includes(memberSearch.toLowerCase())
+                  )
+                  .map((member) => (
+                  <button
+                    key={member.id}
+                    onClick={() => handleMemberSelected(member)}
+                    className="w-full text-left p-3 bg-white/5 hover:bg-white/10 rounded-lg flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center">
+                      <span className="text-purple-400 font-medium">
+                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-white">{member.name}</p>
+                      <p className="text-gray-400 text-sm">{member.email}</p>
+                    </div>
+                  </button>
+                )))}
+            </div>
+            <button
+              onClick={() => setShowMemberSelectModal(false)}
+              className="w-full mt-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500"
+            >
+              Cancelar
+            </button>
+          </div>
+        </Modal>
       )}
     </div>
   );
