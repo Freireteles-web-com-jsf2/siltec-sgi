@@ -77,26 +77,26 @@
 
 ### Analytics Dashboard
 
-- [ ] **ANLT-01**: Usuário visualiza dashboard analítico com visão geral de todos os módulos
-- [ ] **ANLT-02**: Usuário visualiza gráficos de crescimento de membros ao longo do tempo
-- [ ] **ANLT-03**: Usuário visualiza distribuição de membros por departamento (gráfico de pizza/barras)
-- [ ] **ANLT-04**: Usuário visualiza métricas de engajamento (membros ativos vs inativos)
-- [ ] **ANLT-05**: Usuário visualiza tendências financeiras (receitas vs despesas mensais)
+- [x] **ANLT-01**: Usuário visualiza dashboard analítico com visão geral de todos os módulos (Phase 11)
+- [x] **ANLT-02**: Usuário visualiza gráficos de crescimento de membros ao longo do tempo (Phase 11)
+- [x] **ANLT-03**: Usuário visualiza distribuição de membros por departamento (gráfico de pizza/barras) (Phase 11)
+- [x] **ANLT-04**: Usuário visualiza métricas de engajamento (membros ativos vs inativos) (Phase 11)
+- [x] **ANLT-05**: Usuário visualiza tendências financeiras (receitas vs despesas mensais) (Phase 11)
 
 ### Member Analytics
 
-- [ ] **MEMB-ANA-01**: Usuário visualiza relatório de crescimento de membros (mensal, trimestral, anual)
-- [ ] **MEMB-ANA-02**: Usuário visualiza membros por status (ativo, inativo, novo)
-- [ ] **MEMB-ANA-03**: Usuário visualiza taxa de retenção de membros
-- [ ] **MEMB-ANA-04**: Usuário visualiza membros ausentes frequentes
-- [ ] **MEMB-ANA-05**: Usuário pode filtrar membros por critérios analíticos
+- [x] **MEMB-ANA-01**: Usuário visualiza relatório de crescimento de membros (mensal, trimestral, anual) (Phase 12)
+- [x] **MEMB-ANA-02**: Usuário visualiza membros por status (ativo, inativo, novo) (Phase 12)
+- [x] **MEMB-ANA-03**: Usuário visualiza taxa de retenção de membros (Phase 12)
+- [x] **MEMB-ANA-04**: Usuário visualiza membros ausentes frequentes (Phase 12)
+- [x] **MEMB-ANA-05**: Usuário pode filtrar membros por critérios analíticos (Phase 12)
 
 ### Event Analytics
 
-- [ ] **EVT-ANA-01**: Usuário visualiza taxa de participação em eventos
-- [ ] **EVT-ANA-02**: Usuário visualiza eventos mais populares (ranking)
-- [ ] **EVT-ANA-03**: Usuário visualiza tendência de participação ao longo do tempo
-- [ ] **EVT-ANA-04**: Usuário visualiza média de participantes por tipo de evento
+- [x] **EVT-ANA-01**: Usuário visualiza taxa de participação em eventos (Phase 13)
+- [x] **EVT-ANA-02**: Usuário visualiza eventos mais populares (ranking) (Phase 13)
+- [x] **EVT-ANA-03**: Usuário visualiza tendência de participação ao longo do tempo (Phase 13)
+- [x] **EVT-ANA-04**: Usuário visualiza média de participantes por tipo de evento (Phase 13)
 
 ### Financial Analytics
 

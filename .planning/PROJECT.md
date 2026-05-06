@@ -71,19 +71,20 @@ O Siltec-SGI surge da necessidade de modernizar a administração eclesiástica,
 
 ---
 
-## Current Milestone: v2.0 CRUD Operations ✓
+## Current Milestone: v3.0 Advanced Analytics ✓
 
-**Goal:** Adicionar operações CRUD completas aos módulos principais (Membros, Eventos, Departamentos, Financeiro)
+**Goal:** Implementar dashboards de análise avançada com métricas, relatórios e insights sobre membros, eventos e finanças
 
-**Status:** ✅ COMPLETO em 2026-05-06
+**Status:** 🔄 Em planejamento
 
-**Completed Phases:**
-- Phase 7: Members CRUD ✓
-- Phase 8: Events CRUD ✓ (com seleção de membros)
-- Phase 9: Departments CRUD ✓
-- Phase 10: Financial CRUD ✓
+**Previous Milestone:**
+- v2.0: CRUD Operations (Phases 7-10) ✓
+  - Members CRUD ✓
+  - Events CRUD ✓
+  - Departments CRUD ✓
+  - Financial CRUD ✓
 
-**Next:** v3.0 — Novas funcionalidades (planejamento pendente)
+**Next:** Planejamento e desenvolvimento da v3.0
 
 ---
 

@@ -7,6 +7,9 @@ const menuItems = [
     title: 'Geral',
     items: [
       { name: 'Dashboard', path: '/dashboard', icon: '📊' },
+      { name: 'Análises', path: '/analytics', icon: '📈' },
+      { name: 'Análises Membros', path: '/member-analytics', icon: '👥', roles: ['leader', 'super_admin'] },
+      { name: 'Análises Eventos', path: '/event-analytics', icon: '📅', roles: ['leader', 'super_admin'] },
       { name: 'Membros', path: '/members', icon: '👥', roles: ['leader', 'super_admin'] },
       { name: 'Eventos', path: '/events', icon: '📅', roles: ['leader', 'super_admin'] },
     ]

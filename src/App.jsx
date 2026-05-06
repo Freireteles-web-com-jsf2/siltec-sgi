@@ -8,6 +8,10 @@ import SidebarLayout from './components/layout/SidebarLayout';
 // Pages
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import MemberAnalyticsPage from './pages/MemberAnalyticsPage';
+import EventAnalyticsPage from './pages/EventAnalyticsPage';
+import FinancialAnalyticsPage from './pages/FinancialAnalyticsPage';
 import MembersPage from './pages/MembersPage';
 import EventsPage from './pages/EventsPage';
 import FinancialPage from './pages/FinancialPage';
@@ -75,32 +79,42 @@ function AppRoutes() {
         }
       />
 
-      {/* Members - Leaders and Super Admin */}
+      {/* Analytics - Leaders and Super Admin */}
       <Route
-        path="/members"
+        path="/analytics"
+        element={
+          <RequireRole role="member">
+            <SidebarLayout><AnalyticsPage /></SidebarLayout>
+          </RequireRole>
+        }
+      />
+
+      {/* Member Analytics - Leaders and Super Admin */}
+      <Route
+        path="/member-analytics"
         element={
           <RequireAnyRole roles={['leader', 'super_admin']}>
-            <SidebarLayout><MembersPage /></SidebarLayout>
+            <SidebarLayout><MemberAnalyticsPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
 
-      {/* Events - Leaders and Super Admin */}
+      {/* Event Analytics - Leaders and Super Admin */}
       <Route
-        path="/events"
+        path="/event-analytics"
         element={
           <RequireAnyRole roles={['leader', 'super_admin']}>
-            <SidebarLayout><EventsPage /></SidebarLayout>
+            <SidebarLayout><EventAnalyticsPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
 
-      {/* Departments - Leaders and Super Admin */}
+      {/* Financial Analytics - Treasurer and Super Admin */}
       <Route
-        path="/departments"
+        path="/financial-analytics"
         element={
-          <RequireAnyRole roles={['leader', 'super_admin']}>
-            <SidebarLayout><DepartmentsPage /></SidebarLayout>
+          <RequireAnyRole roles={['treasurer', 'super_admin', 'leader']}>
+            <SidebarLayout><FinancialAnalyticsPage /></SidebarLayout>
           </RequireAnyRole>
         }
       />
