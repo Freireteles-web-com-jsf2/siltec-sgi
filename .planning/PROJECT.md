@@ -12,44 +12,23 @@ Centralizar e simplificar a administração eclesiástica através de uma interf
 
 ### Validated
 
-(Nenhum ainda — primeiro milestone é o MVP)
+- [x] **AUTH-01**: Usuário pode acessar o sistema com e-mail e senha (Phase 1)
+- [x] **AUTH-02**: Usuário pode recuperar senha através de fluxo de recuperação (Phase 1)
+- [x] **AUTH-03**: Usuário pode optar por "Lembrar-me" para persistência de sessão (Phase 1)
+- [x] **DASH-01**: Usuário visualiza resumo personalizado com saudação e métricas (Phase 2)
+- [x] **MEMB-01**: Usuário visualiza indicadores de status da saúde cadastral (Phase 3)
+- [x] **EVT-01**: Usuário visualiza card promocional de mega eventos (Phase 4)
+- [x] **FIN-01**: Usuário visualiza visão holística do capital operacional (Phase 5)
+- [x] **GRP-01**: Usuário visualiza estatísticas de engajamento (Phase 6)
 
 ### Active
 
-- [ ] **AUTH-01**: Usuário pode acessar o sistema com e-mail e senha
-- [ ] **AUTH-02**: Usuário pode recuperar senha através de fluxo de recuperação
-- [ ] **AUTH-03**: Usuário pode optar por "Lembrar-me" para persistência de sessão
-- [ ] **ACESSO-01**: Sistema deve diferenciar tipos de usuário (Membro, Líder, Tesoureiro, Super Admin)
-- [ ] **ACESSO-02**: Membros só podem visualizar informações básicas (perfil próprio, eventos)
-- [ ] **ACESSO-03**: Líderes podem cadastrar, editar e visualizar em Membros, Eventos, Departamentos e Dashboard
-- [ ] **ACESSO-04**: Líderes têm apenas permissão de visualização no módulo Financeiro
-- [ ] **ACESSO-05**: Tesoureiros têm permissão CRUD total apenas no módulo Financeiro
-- [ ] **ACESSO-06**: Super Admin tem privilégios totais de CRUD em todos os módulos
-- [ ] **ACESSO-07**: Super Admin pode gerenciar papéis e permissões de outros usuários
-- [ ] **DASH-01**: Usuário visualiza resumo personalizado com saudação e métricas da congregação
-- [ ] **DASH-02**: Usuário visualiza métricas financeiras rápidas com gráficos sparkline
-- [ ] **DASH-03**: Usuário visualiza crescimento comunitário (total de membros e taxa do mês)
-- [ ] **DASH-04**: Usuário visualiza agenda diária com compromissos e cultos
-- [ ] **DASH-05**: Usuário visualiza card destacando o próximo evento importante
-- [ ] **MEMB-01**: Usuário visualiza indicadores de status da saúde cadastral (total, ativos)
-- [ ] **MEMB-02**: Usuário visualiza diretório/tabela de membros com foto/avatar, nome, data registro, status, departamento e contato
-- [ ] **MEMB-03**: Usuário pode filtrar membros por departamento via abas rápidas
-- [ ] **MEMB-04**: Usuário pode exportar relatório de diretório em PDF ou CSV
-- [ ] **MEMB-05**: Usuário navega por grandes volumes de membros via paginação
-- [ ] **EVT-01**: Usuário visualiza card promocional de mega eventos com inscrições
-- [ ] **EVT-02**: Usuário visualiza quadro de cultos semanais com horários recorrentes
-- [ ] **EVT-03**: Usuário visualiza calendário comunitário com cards de eventos (retiros, ações sociais, etc.)
-- [ ] **EVT-04**: Usuário pode realizar inscrições rápidas e gerenciar capacidade de eventos
-- [ ] **EVT-05**: Usuário pode filtrar eventos por categoria (Retiros, Feiras, Ações Comunitárias)
-- [ ] **FIN-01**: Usuário visualiza visão holística do capital operacional com ações de transferir/gerar relatório
-- [ ] **FIN-02**: Usuário acompanha dízimos/metas com comparação planejado vs realizado e barra de progresso
-- [ ] **FIN-03**: Usuário visualiza análise de fluxo de caixa com gráfico interativo de entradas vs saídas
-- [ ] **FIN-04**: Usuário visualiza alocação de fundos com gráfico donut (Missões, Programas, Operações)
-- [ ] **FIN-05**: Usuário visualiza transações recentes com indicação visual de débito/crédito
-- [ ] **GRP-01**: Usuário visualiza estatísticas de engajamento (líderes ativos vs membros)
-- [ ] **GRP-02**: Usuário visualiza cartões de departamento em bento grid com estruturação visual
-- [ ] **GRP-03**: Usuário visualiza nomes dos líderes e indicadores de vagas vs participantes
-- [ ] **GRP-04**: Usuário visualiza status de cada subunidade com avatar visual da comunidade
+- [x] **MEMB-CRUD-01**: Usuário pode cadastrar novo membro (Phase 7)
+- [x] **MEMB-CRUD-02**: Usuário pode editar detalhes de membro (Phase 7)
+- [x] **EVT-CRUD-01**: Usuário pode criar novo evento (Phase 8)
+- [x] **EVT-CRUD-05**: Usuário pode gerenciar inscrições (Phase 8) — com seleção de membros
+- [x] **DEPT-CRUD-01**: Usuário pode criar departamento (Phase 9)
+- [x] **FIN-CRUD-01**: Usuário pode criar transação (Phase 10)
 
 ### Out of Scope
 
@@ -92,15 +71,19 @@ O Siltec-SGI surge da necessidade de modernizar a administração eclesiástica,
 
 ---
 
-## Current Milestone: v2.0 CRUD Operations
+## Current Milestone: v2.0 CRUD Operations ✓
 
 **Goal:** Adicionar operações CRUD completas aos módulos principais (Membros, Eventos, Departamentos, Financeiro)
 
-**Target features:**
-- Membros: Create, Edit, Delete
-- Eventos: Create, Edit, Delete + gestão de inscrições
-- Departamentos: Create, Edit, Delete + gestão de grupos
-- Financeiro: Create (lançamentos), Edit, Delete + relatórios
+**Status:** ✅ COMPLETO em 2026-05-06
+
+**Completed Phases:**
+- Phase 7: Members CRUD ✓
+- Phase 8: Events CRUD ✓ (com seleção de membros)
+- Phase 9: Departments CRUD ✓
+- Phase 10: Financial CRUD ✓
+
+**Next:** v3.0 — Novas funcionalidades (planejamento pendente)
 
 ---
 
@@ -121,4 +104,4 @@ This document evolves at phase transitions and milestone boundaries.
 3. Audit Out of Scope — reasons still valid?
 4. Update Context with current state
 
-*Last updated: 2026-05-05 after v2.0 milestone start*
+*Last updated: 2026-05-06 after v2.0 milestone completion*
